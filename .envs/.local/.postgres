@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=salon_jelena
+POSTGRES_USER=YluGTSBrkwfCmvuuQqEbrxvVmpIRWWoK
+POSTGRES_PASSWORD=bDUdbZrAeFnecPBq7mtNmNBx2muCndcNsziQGRwvoyZJxu7zzPYX2H8nkPKN1ckT

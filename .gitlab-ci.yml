@@ -1,0 +1,35 @@
+stages:
+  - lint
+  - test
+
+variables:
+  POSTGRES_USER: 'salon_jelena'
+  POSTGRES_PASSWORD: ''
+  POSTGRES_DB: 'test_salon_jelena'
+  POSTGRES_HOST_AUTH_METHOD: trust
+  REDIS_URL: 'redis://redis:6379/0'
+
+precommit:
+  stage: lint
+  image: python:3.12
+  variables:
+    PRE_COMMIT_HOME: ${CI_PROJECT_DIR}/.cache/pre-commit
+  cache:
+    paths:
+      - ${PRE_COMMIT_HOME}
+  before_script:
+    - pip install -q pre-commit
+  script:
+    - pre-commit run --show-diff-on-failure --color=always --all-files
+
+pytest:
+  stage: test
+  image: python:3.12
+  services:
+    - postgres:16
+  variables:
+    DATABASE_URL: pgsql://$POSTGRES_USER:$POSTGRES_PASSWORD@postgres/$POSTGRES_DB
+  before_script:
+    - pip install -r requirements/local.txt
+  script:
+    - pytest
