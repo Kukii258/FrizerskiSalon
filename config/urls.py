@@ -7,7 +7,10 @@ from django.urls import path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
 
+from jelena import views
+
 urlpatterns = [
+    path("", views.naslovnica, name="naslovnica"),
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(
         "about/",

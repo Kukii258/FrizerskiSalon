@@ -1,3 +1,5 @@
+{% load static i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,16 +14,13 @@
     <!-- Additional CSS Files -->
     <link rel="stylesheet"
           type="text/css"
-          href="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/css/bootstrap.min.css" />
+          href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet"
           type="text/css"
-          href="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/css/font-awesome.css" />
-    <link rel="stylesheet"
-          href="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/css/templatemo-hexashop.css" />
-    <link rel="stylesheet"
-          href="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/css/owl-carousel.css" />
-    <link rel="stylesheet"
-          href="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/css/lightbox.css" />
+          href="{% static 'css/font-awesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/templatemo-hexashop.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}" />
     <!--
 TemplateMo 571 Hexashop
 
@@ -47,7 +46,7 @@ https://templatemo.com/tm-571-hexashop
             <nav class="main-nav">
               <!-- ***** Logo Start ***** -->
               <a href="index.html" class="logo">
-                <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/logo.png" />
+                <img src="{% static 'images/logo.png' %}" />
               </a>
               <!-- ***** Logo End ***** -->
               <!-- ***** Menu Start ***** -->
@@ -126,8 +125,7 @@ https://templatemo.com/tm-571-hexashop
                     <a href="#">Purchase Now!</a>
                   </div>
                 </div>
-                <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/left-banner-image.jpg"
-                     alt="" />
+                <img src="{% static 'images/left-banner-image.jpg' %}" alt="" />
               </div>
             </div>
           </div>
@@ -150,7 +148,7 @@ https://templatemo.com/tm-571-hexashop
                           </div>
                         </div>
                       </div>
-                      <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/baner-right-image-01.jpg" />
+                      <img src="{% static 'images/baner-right-image-01.jpg' %}" />
                     </div>
                   </div>
                 </div>
@@ -170,7 +168,7 @@ https://templatemo.com/tm-571-hexashop
                           </div>
                         </div>
                       </div>
-                      <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/baner-right-image-02.jpg" />
+                      <img src="{% static 'images/baner-right-image-02.jpg' %}" />
                     </div>
                   </div>
                 </div>
@@ -190,7 +188,7 @@ https://templatemo.com/tm-571-hexashop
                           </div>
                         </div>
                       </div>
-                      <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/baner-right-image-03.jpg" />
+                      <img src="{% static 'images/baner-right-image-03.jpg' %}" />
                     </div>
                   </div>
                 </div>
@@ -210,7 +208,7 @@ https://templatemo.com/tm-571-hexashop
                           </div>
                         </div>
                       </div>
-                      <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/baner-right-image-04.jpg" />
+                      <img src="{% static 'images/baner-right-image-04.jpg' %}" />
                     </div>
                   </div>
                 </div>
@@ -253,8 +251,7 @@ https://templatemo.com/tm-571-hexashop
                         </li>
                       </ul>
                     </div>
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/men-01.jpg"
-                         alt="" />
+                    <img src="{% static 'images/men-01.jpg' %}" alt="" />
                   </div>
                   <div class="down-content">
                     <h4>Classic Spring</h4>
@@ -293,8 +290,7 @@ https://templatemo.com/tm-571-hexashop
                         </li>
                       </ul>
                     </div>
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/men-02.jpg"
-                         alt="" />
+                    <img src="{% static 'images/men-02.jpg' %}" alt="" />
                   </div>
                   <div class="down-content">
                     <h4>Air Force 1 X</h4>
@@ -333,8 +329,7 @@ https://templatemo.com/tm-571-hexashop
                         </li>
                       </ul>
                     </div>
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/men-03.jpg"
-                         alt="" />
+                    <img src="{% static 'images/men-03.jpg' %}" alt="" />
                   </div>
                   <div class="down-content">
                     <h4>Love Nana ‘20</h4>
@@ -373,8 +368,7 @@ https://templatemo.com/tm-571-hexashop
                         </li>
                       </ul>
                     </div>
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/men-01.jpg"
-                         alt="" />
+                    <img src="{% static 'images/men-01.jpg' %}" alt="" />
                   </div>
                   <div class="down-content">
                     <h4>Classic Spring</h4>
@@ -437,8 +431,7 @@ https://templatemo.com/tm-571-hexashop
                         </li>
                       </ul>
                     </div>
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/women-01.jpg"
-                         alt="" />
+                    <img src="{% static 'images/women-01.jpg' %}" alt="" />
                   </div>
                   <div class="down-content">
                     <h4>New Green Jacket</h4>
@@ -477,8 +470,7 @@ https://templatemo.com/tm-571-hexashop
                         </li>
                       </ul>
                     </div>
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/women-02.jpg"
-                         alt="" />
+                    <img src="{% static 'images/women-02.jpg' %}" alt="" />
                   </div>
                   <div class="down-content">
                     <h4>Classic Dress</h4>
@@ -517,8 +509,7 @@ https://templatemo.com/tm-571-hexashop
                         </li>
                       </ul>
                     </div>
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/women-03.jpg"
-                         alt="" />
+                    <img src="{% static 'images/women-03.jpg' %}" alt="" />
                   </div>
                   <div class="down-content">
                     <h4>Spring Collection</h4>
@@ -557,8 +548,7 @@ https://templatemo.com/tm-571-hexashop
                         </li>
                       </ul>
                     </div>
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/women-01.jpg"
-                         alt="" />
+                    <img src="{% static 'images/women-01.jpg' %}" alt="" />
                   </div>
                   <div class="down-content">
                     <h4>Classic Spring</h4>
@@ -621,8 +611,7 @@ https://templatemo.com/tm-571-hexashop
                         </li>
                       </ul>
                     </div>
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/kid-01.jpg"
-                         alt="" />
+                    <img src="{% static 'images/kid-01.jpg' %}" alt="" />
                   </div>
                   <div class="down-content">
                     <h4>School Collection</h4>
@@ -661,8 +650,7 @@ https://templatemo.com/tm-571-hexashop
                         </li>
                       </ul>
                     </div>
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/kid-02.jpg"
-                         alt="" />
+                    <img src="{% static 'images/kid-02.jpg' %}" alt="" />
                   </div>
                   <div class="down-content">
                     <h4>Summer Cap</h4>
@@ -701,8 +689,7 @@ https://templatemo.com/tm-571-hexashop
                         </li>
                       </ul>
                     </div>
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/kid-03.jpg"
-                         alt="" />
+                    <img src="{% static 'images/kid-03.jpg' %}" alt="" />
                   </div>
                   <div class="down-content">
                     <h4>Classic Kid</h4>
@@ -741,8 +728,7 @@ https://templatemo.com/tm-571-hexashop
                         </li>
                       </ul>
                     </div>
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/kid-01.jpg"
-                         alt="" />
+                    <img src="{% static 'images/kid-01.jpg' %}" alt="" />
                   </div>
                   <div class="down-content">
                     <h4>Classic Spring</h4>
@@ -807,14 +793,12 @@ https://templatemo.com/tm-571-hexashop
                 </div>
                 <div class="col-lg-6">
                   <div class="first-image">
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/explore-image-01.jpg"
-                         alt="" />
+                    <img src="{% static 'images/explore-image-01.jpg' %}" alt="" />
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="second-image">
-                    <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/explore-image-02.jpg"
-                         alt="" />
+                    <img src="{% static 'images/explore-image-02.jpg' %}" alt="" />
                   </div>
                 </div>
                 <div class="col-lg-6">
@@ -852,8 +836,7 @@ https://templatemo.com/tm-571-hexashop
                   <i class="fa fa-instagram"></i>
                 </a>
               </div>
-              <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/instagram-01.jpg"
-                   alt="" />
+              <img src="{% static 'images/instagram-01.jpg' %}" alt="" />
             </div>
           </div>
           <div class="col-2">
@@ -864,8 +847,7 @@ https://templatemo.com/tm-571-hexashop
                   <i class="fa fa-instagram"></i>
                 </a>
               </div>
-              <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/instagram-02.jpg"
-                   alt="" />
+              <img src="{% static 'images/instagram-02.jpg' %}" alt="" />
             </div>
           </div>
           <div class="col-2">
@@ -876,8 +858,7 @@ https://templatemo.com/tm-571-hexashop
                   <i class="fa fa-instagram"></i>
                 </a>
               </div>
-              <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/instagram-03.jpg"
-                   alt="" />
+              <img src="{% static 'images/instagram-03.jpg' %}" alt="" />
             </div>
           </div>
           <div class="col-2">
@@ -888,8 +869,7 @@ https://templatemo.com/tm-571-hexashop
                   <i class="fa fa-instagram"></i>
                 </a>
               </div>
-              <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/instagram-04.jpg"
-                   alt="" />
+              <img src="{% static 'images/instagram-04.jpg' %}" alt="" />
             </div>
           </div>
           <div class="col-2">
@@ -900,8 +880,7 @@ https://templatemo.com/tm-571-hexashop
                   <i class="fa fa-instagram"></i>
                 </a>
               </div>
-              <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/instagram-05.jpg"
-                   alt="" />
+              <img src="{% static 'images/instagram-05.jpg' %}" alt="" />
             </div>
           </div>
           <div class="col-2">
@@ -912,8 +891,7 @@ https://templatemo.com/tm-571-hexashop
                   <i class="fa fa-instagram"></i>
                 </a>
               </div>
-              <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/instagram-06.jpg"
-                   alt="" />
+              <img src="{% static 'images/instagram-06.jpg' %}" alt="" />
             </div>
           </div>
         </div>
@@ -1009,7 +987,7 @@ https://templatemo.com/tm-571-hexashop
           <div class="col-lg-3">
             <div class="first-item">
               <div class="logo">
-                <img src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/images/white-logo.png"
+                <img src="{% static 'images/white-logo.png' %}"
                      alt="hexashop ecommerce templatemo" />
               </div>
               <ul>
@@ -1102,23 +1080,23 @@ https://templatemo.com/tm-571-hexashop
       </div>
     </footer>
     <!-- jQuery -->
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/jquery-2.1.0.min.js"></script>
+    <script src="{% static 'js/jquery-2.1.0.min.js'%}"></script>
     <!-- Bootstrap -->
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/popper.js"></script>
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/popper.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
     <!-- Plugins -->
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/owl-carousel.js"></script>
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/accordions.js"></script>
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/datepicker.js"></script>
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/scrollreveal.min.js"></script>
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/waypoints.min.js"></script>
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/jquery.counterup.min.js"></script>
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/imgfix.min.js"></script>
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/slick.js"></script>
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/lightbox.js"></script>
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/isotope.js"></script>
+    <script src="{% static 'js/owl-carousel.js'%}"></script>
+    <script src="{% static 'js/accordions.js'%}"></script>
+    <script src="{% static 'js/datepicker.js'%}"></script>
+    <script src="{% static 'js/scrollreveal.min.js'%}"></script>
+    <script src="{% static 'js/waypoints.min.js'%}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js'%}"></script>
+    <script src="{% static 'js/imgfix.min.js'%}"></script>
+    <script src="{% static 'js/slick.js'%}"></script>
+    <script src="{% static 'js/lightbox.js'%}"></script>
+    <script src="{% static 'js/isotope.js'%}"></script>
     <!-- Global Init -->
-    <script src="../../../../../../Desktop/templatemo_571_hexashop/templatemo_571_hexashop/assets/js/custom.js"></script>
+    <script src="{% static 'js/custom.js'%}"></script>
     <script>
       $(function() {
         var selectedClass = "";
