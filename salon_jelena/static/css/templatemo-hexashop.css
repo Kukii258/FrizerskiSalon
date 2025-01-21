@@ -2377,3 +2377,9 @@ responsive
     opacity: 0;
   }
 }
+#luka {
+  width: 150px; /* Desired rectangle width */
+  height: 75px; /* Desired rectangle height */
+  object-fit: cover; /* Ensures the image fills the rectangle without distortion */
+  border-radius: 10px; /* Optional: Rounded corners */
+}
