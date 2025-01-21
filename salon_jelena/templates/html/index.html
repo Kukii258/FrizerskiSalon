@@ -1,1098 +1,879 @@
+{% extends "html/base.html" %}
+
 {% load static i18n %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-          rel="stylesheet" />
-    <title>Frizerski Salon Jelena</title>
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet"
-          type="text/css"
-          href="{% static 'css/bootstrap.min.css' %}" />
-    <link rel="stylesheet"
-          type="text/css"
-          href="{% static 'css/font-awesome.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/templatemo-hexashop.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}" />
-    <!--
-TemplateMo 571 Hexashop
-
-https://templatemo.com/tm-571-hexashop
-
--->
-  </head>
-  <body>
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-      <div class="jumper">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <!-- ***** Preloader End ***** -->
-    <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <nav class="main-nav">
-              <!-- ***** Logo Start ***** -->
-              <a href="index.html" class="logo">
-                <img id="luka" src="{% static 'images/logo.png' %}" />
-              </a>
-              <!-- ***** Logo End ***** -->
-              <!-- ***** Menu Start ***** -->
-              <ul class="nav">
-                <li class="scroll-to-section">
-                  <a href="#top" class="active">Početna</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="#men">Muškarci</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="#women">Žene</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="#kids">Djeca</a>
-                </li>
-                <li class="submenu">
-                  <a href="javascript:;">Stranice</a>
-                  <ul>
-                    <li>
-                      <a href="about.html">O nama</a>
-                    </li>
-                    <li>
-                      <a href="products.html">Produkti</a>
-                    </li>
-                    <!--<li>
-                      <a href="single-product.html">Single Product</a>
-                    </li>-->
-                    <li>
-                      <a href="contact.html">Kontaktirajte nas</a>
-                    </li>
-                  </ul>
-                </li>
-                <!--<li class="submenu">
-                  <a href="javascript:;">Features</a>
-                  <ul>
-                    <li>
-                      <a href="#">Features Page 1</a>
-                    </li>
-                    <li>
-                      <a href="#">Features Page 2</a>
-                    </li>
-                    <li>
-                      <a href="#">Features Page 3</a>
-                    </li>
-                    <li>
-                      <a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="#explore">Explore</a>
-                </li>
-                -->
-              </ul>
-              <a class='menu-trigger'>
-                <span>Menu</span>
-              </a>
-              <!-- ***** Menu End ***** -->
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- ***** Header Area End ***** -->
-    <!-- ***** Main Banner Area Start ***** -->
-    <div class="main-banner" id="top">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="left-content">
-              <div class="thumb">
-                <div class="inner-content">
-                  <h4>TEKST O Obavijesti</h4>
-                  <span>Tekst koji objasnjava obavijest</span>
-                  <div class="main-border-button">
-                    <a href="#">PROČITAJ VIŠE -></a>
-                  </div>
-                </div>
-                <img src="{% static 'images/obavijest.jpg' %}" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="right-content">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="right-first-image">
-                    <div class="thumb">
-                      <div class="inner-content">
-                        <h4>Žene</h4>
-                        <span>Najbolje Frizure Za Žene</span>
-                      </div>
-                      <div class="hover-content">
-                        <div class="inner">
-                          <h4>Žene</h4>
-                          <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
-                          <div class="main-border-button">
-                            <a href="#">Saznaj Više</a>
-                          </div>
-                        </div>
-                      </div>
-                      <img src="{% static 'images/zenska.jpg' %}" />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="right-first-image">
-                    <div class="thumb">
-                      <div class="inner-content">
-                        <h4>Muškarci</h4>
-                        <span>Najbolje Frizure Za Muškarce</span>
-                      </div>
-                      <div class="hover-content">
-                        <div class="inner">
-                          <h4>Muškarci</h4>
-                          <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
-                          <div class="main-border-button">
-                            <a href="#">Saznaj više</a>
-                          </div>
-                        </div>
-                      </div>
-                      <img src="{% static 'images/muski.jpg' %}" />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="right-first-image">
-                    <div class="thumb">
-                      <div class="inner-content">
-                        <h4>Djeca</h4>
-                        <span>Najbolje Dječje Frizure</span>
-                      </div>
-                      <div class="hover-content">
-                        <div class="inner">
-                          <h4>Djeca</h4>
-                          <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
-                          <div class="main-border-button">
-                            <a href="#">Saznaj više</a>
-                          </div>
-                        </div>
-                      </div>
-                      <img src="{% static 'images/djecja.jpg' %}" />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="right-first-image">
-                    <div class="thumb">
-                      <div class="inner-content">
-                        <h4>Naši produkti</h4>
-                        <!--<span>Naši Produkti</span>-->
-                      </div>
-                      <div class="hover-content">
-                        <div class="inner">
-                          <h4>Naši produkti</h4>
-                          <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
-                          <div class="main-border-button">
-                            <a href="#">Saznaj više</a>
-                          </div>
-                        </div>
-                      </div>
-                      <img src="{% static 'images/produkt.jpg' %}" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- ***** Men Area Ends ***** -->
-    <!-- ***** Women Area Starts ***** -->
-    <section class="section" id="women">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="section-heading">
-              <h2>Ženske Frizure</h2>
-              <!--<span>Details to details is what makes Hexashop different from the other themes.</span>-->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="women-item-carousel">
-              <div class="owl-women-item owl-carousel">
-                <div class="item">
-                  <div class="thumb">
-                    <div class="hover-content">
-                      <ul>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-star"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <img src="{% static 'images/zenska/zenska1.jpg' %}" alt="" />
-                  </div>
-                  <div class="down-content">
-                    <h4>Ime Frizure / Šminke</h4>
-                    <span>55.00€</span>
-                    <ul class="stars">
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <div class="hover-content">
-                      <ul>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-star"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <img src="{% static 'images/zenska/zenska2.jpg' %}" alt="" />
-                  </div>
-                  <div class="down-content">
-                    <h4>Ime Frizure / Šminke</h4>
-                    <span>45.00€</span>
-                    <ul class="stars">
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <div class="hover-content">
-                      <ul>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-star"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <img src="{% static 'images/zenska/zenska3.jpg' %}" alt="" />
-                  </div>
-                  <div class="down-content">
-                    <h4>Ime Frizure / Šminke</h4>
-                    <span>50.00€</span>
-                    <ul class="stars">
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <div class="hover-content">
-                      <ul>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-star"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <img src="{% static 'images/zenska/zenska4.jpg' %}" alt="" />
-                  </div>
-                  <div class="down-content">
-                    <h4>Ime Frizure / Šminke</h4>
-                    <span>60.00€</span>
-                    <ul class="stars">
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ***** Women Area Ends ***** -->
-    <!-- ***** Main Banner Area End ***** -->
-    <!-- ***** Men Area Starts ***** -->
-    <section class="section" id="men">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="section-heading">
-              <h2>Dječje Frizure</h2>
-              <!--<span>Details to details is what makes Hexashop different from the other themes.</span>-->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="men-item-carousel">
-              <div class="owl-men-item owl-carousel">
-                <div class="item">
-                  <div class="thumb">
-                    <div class="hover-content">
-                      <ul>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-star"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <img src="{% static 'images/djecja/djecje1.jpg' %}" alt="" />
-                  </div>
-                  <div class="down-content">
-                    <h4>Ime Frizure</h4>
-                    <span>20.00€</span>
-                    <ul class="stars">
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <div class="hover-content">
-                      <ul>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-star"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <img src="{% static 'images/djecja/djecja2.jpg' %}" alt="" />
-                  </div>
-                  <div class="down-content">
-                    <h4>Ime Frizure</h4>
-                    <span>30.00€</span>
-                    <ul class="stars">
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <div class="hover-content">
-                      <ul>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-star"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <img src="{% static 'images/djecja/djecja3.jpg' %}" alt="" />
-                  </div>
-                  <div class="down-content">
-                    <h4>Ime Frizure</h4>
-                    <span>25.00€</span>
-                    <ul class="stars">
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <div class="hover-content">
-                      <ul>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-star"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <img src="{% static 'images/djecja/djecja4.jpg' %}" alt="" />
-                  </div>
-                  <div class="down-content">
-                    <h4>Ime Frizure</h4>
-                    <span>35.00€</span>
-                    <ul class="stars">
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ***** Product Area Starts ***** -->
-    <section class="section" id="kids">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="section-heading">
-              <h2>Naši Produkti</h2>
-              <!--<span>Details to details is what makes Hexashop different from the other themes.</span>-->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="kid-item-carousel">
-              <div class="owl-kid-item owl-carousel">
-                <div class="item">
-                  <div class="thumb">
-                    <div class="hover-content">
-                      <ul>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-star"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <img src="{% static 'images/produkti/produkt1.jpg' %}" alt="" />
-                  </div>
-                  <div class="down-content">
-                    <h4>Naslov Proizvoda</h4>
-                    <span>55.00€</span>
-                    <ul class="stars">
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <div class="hover-content">
-                      <ul>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-star"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <img src="{% static 'images/produkti/produkt2.jpg' %}" alt="" />
-                  </div>
-                  <div class="down-content">
-                    <h4>Naslov Proizvoda</h4>
-                    <span>48.00€</span>
-                    <ul class="stars">
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <div class="hover-content">
-                      <ul>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-star"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <img src="{% static 'images/produkti/produkt3.jpg' %}" alt="" />
-                  </div>
-                  <div class="down-content">
-                    <h4>Naslov Proizvoda</h4>
-                    <span>48.00€</span>
-                    <ul class="stars">
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumb">
-                    <div class="hover-content">
-                      <ul>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-star"></i></a>
-                        </li>
-                        <li>
-                          <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <img src="{% static 'images/produkti/produkt4.jpg' %}" alt="" />
-                  </div>
-                  <div class="down-content">
-                    <h4>Naslov Proizvoda</h4>
-                    <span>46.00€</span>
-                    <ul class="stars">
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                      <li>
-                        <i class="fa fa-star"></i>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ***** Kids Area Ends ***** -->
-    <!-- ***** Explore Area Starts ***** -->
-    <section class="section" id="explore">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="left-content">
-              <h2>Istraži naše proizvode</h2>
-              <span>Actyva je linija profesionalnih šampona talijanske tvrtke Kemon, namijenjena različitim potrebama kose i vlasišta. Svaki šampon iz ove linije formuliran je kako bi pružio specifičnu njegu, koristeći kombinaciju prirodnih sastojaka i napredne tehnologije.</span>
-              <div class="quote">
-                <i class="fa fa-quote-left"></i>
-                <p>DODATI TEKST PO ZELJI</p>
-              </div>
-              <p>
-                Kemonova Actyva linija nastoji spojiti znanost i prirodu, koristeći više od 40 sastojaka prirodnog podrijetla koji djeluju u sinergiji s najnovijim dostignućima kozmetičkih istraživanja. Profesionalni tretmani iz ove linije formulirani su kako bi poboljšali ljepotu kose i održali zdravlje vlasišta, pružajući vidljive rezultate odmah nakon upotrebe.
-              </p>
-              <div class="main-border-button">
-                <a href="products.html">Istraži više</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="right-content">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="leather">
-                    <h4>ACTYVA</h4>
-                    <span>colore brillante</span>
-                    <br />
-                    <span>SHAMPOO</span>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="first-image">
-                    <img src="{% static 'images/explore_produkt.jpg' %}" alt="" />
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="second-image">
-                    <img src="{% static 'images/explore_produkt1.jpg' %}" alt="" />
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="types">
-                    <h4>ACTYVA</h4>
-                    <span>linfa solare</span>
-                    <br />
-                    <span>SHAMPOO</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ***** Explore Area Ends ***** -->
-    <!-- ***** Social Area Starts ***** -->
-    <section class="section" id="social">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="section-heading">
-              <h2>Pratite nas na društvenim mrežama</h2>
-              <p>
-                Budite u toku s najnovijim vijestima, ponudama i inspiracijama – zapratite nas na našim društvenim mrežama i pridružite se našoj zajednici!
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row images">
-          <div class="col-2">
+{% block title %}Naslovnica - Frizerski Salon Jelena{% endblock %}
+{% block content %}
+  <!-- ***** Header Area End ***** -->
+  <!-- ***** Main Banner Area Start ***** -->
+  <div class="main-banner" id="top">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="left-content">
             <div class="thumb">
-              <div class="icon">
-                <a href="http://instagram.com">
-                  <h6>Products</h6>
-                  <i class="fa fa-instagram"></i>
-                </a>
+              <div class="inner-content">
+                <h4>{{ obavijest.naslov }}</h4>
+                <span>{{ obavijest.pod_naslov }}</span>
+                <div class="main-border-button">
+                  {% if obavijest.url %}
+                    <a href="{{ obavijest.url }}">PROČITAJ VIŠE -></a>
+                  {% else %}
+                    <a href="{% url 'obavijest' obavijest.pk %}">PROČITAJ VIŠE -></a>
+                  {% endif %}
+                </div>
               </div>
-              <img src="{% static 'images/insta1.jpg' %}" alt="" />
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="thumb">
-              <div class="icon">
-                <a href="http://instagram.com">
-                  <h6>Makeup</h6>
-                  <i class="fa fa-instagram"></i>
-                </a>
-              </div>
-              <img src="{% static 'images/insta2.jpg' %}" alt="" />
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="thumb">
-              <div class="icon">
-                <a href="http://instagram.com">
-                  <h6>Brand</h6>
-                  <i class="fa fa-instagram"></i>
-                </a>
-              </div>
-              <img src="{% static 'images/insta3.jpg' %}" alt="" />
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="thumb">
-              <div class="icon">
-                <a href="http://instagram.com">
-                  <h6>New</h6>
-                  <i class="fa fa-instagram"></i>
-                </a>
-              </div>
-              <img src="{% static 'images/insta4.jpg' %}" alt="" />
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="thumb">
-              <div class="icon">
-                <a href="http://instagram.com">
-                  <h6>Fashion</h6>
-                  <i class="fa fa-instagram"></i>
-                </a>
-              </div>
-              <img src="{% static 'images/insta5.jpg' %}" alt="" />
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="thumb">
-              <div class="icon">
-                <a href="http://instagram.com">
-                  <h6>Aesthetic</h6>
-                  <i class="fa fa-instagram"></i>
-                </a>
-              </div>
-              <img src="{% static 'images/insta6.jpg' %}" alt="" />
+              <img src="{% static 'images/obavijest.jpg' %}" alt="" />
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- ***** Social Area Ends ***** -->
-    <!-- ***** Subscribe Area Starts ***** -->
-    <div class="subscribe">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="section-heading">
-              <h2>Naruči Se Putem E-Maila</h2>
-              <span>Napiši nam svoje ime, frizuru i datum kada bi se htio naručiti</span>
-            </div>
-            <form id="subscribe" action="" method="get">
-              <div class="row">
-                <div class="col-lg-5">
-                  <fieldset>
-                    <input name="name" type="text" id="name" placeholder="Tvoje Ime" required="" />
-                  </fieldset>
-                </div>
-                <div class="col-lg-5">
-                  <fieldset>
-                    <input name="email"
-                           type="text"
-                           id="email"
-                           pattern="[^ @]*@[^ @]*"
-                           placeholder="Tvoje Email Adresa"
-                           required="" />
-                  </fieldset>
-                </div>
-                <div class="col-lg-2">
-                  <fieldset>
-                    <button type="submit" id="form-submit" class="main-dark-button">
-                      <i class="fa fa-paper-plane"></i>
-                    </button>
-                  </fieldset>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="col-lg-4">
+        <div class="col-lg-6">
+          <div class="right-content">
             <div class="row">
-              <div class="col-6">
-                <ul>
-                  <li>
-                    Lokacija Salona:
-                    <br />
-                    <span>Ul. Ljudevita Vukotinovića 2, 48260, Križevci</span>
-                  </li>
-                  <li>
-                    Telefon:
-                    <br />
-                    <span>048 682 151</span>
-                  </li>
-                </ul>
+              <div class="col-lg-6">
+                <div class="right-first-image">
+                  <div class="thumb">
+                    <div class="inner-content">
+                      <h4>Žene</h4>
+                      <span>Najbolje Frizure Za Žene</span>
+                    </div>
+                    <div class="hover-content">
+                      <div class="inner">
+                        <h4>Žene</h4>
+                        <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
+                        <div class="main-border-button">
+                          <a href="#">Saznaj Više</a>
+                        </div>
+                      </div>
+                    </div>
+                    <img src="{% static 'images/zenska.jpg' %}" />
+                  </div>
+                </div>
               </div>
-              <div class="col-6">
-                <ul>
-                  <li>
-                    Radno vrijeme:
-                    <br />
-                    <span>07:00 - 19:00 Pon - Pet</span>
-                    <span>07:00 - 15:00 Sub</span>
-                  </li>
-                  <li>
-                    Email:
-                    <br />
-                    <span>frizerski.studio.jelena@gmail.com</span>
-                  </li>
-                  <li>
-                    Social Media:
-                    <br />
-                    <span><a href="https://www.facebook.com/frizerski.studio.jelena/?locale=hr_HR">Facebook</a>, <a href="https://www.instagram.com/jelenafrizerskisalon/">Instagram</a></span>
-                  </li>
-                </ul>
+              <div class="col-lg-6">
+                <div class="right-first-image">
+                  <div class="thumb">
+                    <div class="inner-content">
+                      <h4>Muškarci</h4>
+                      <span>Najbolje Frizure Za Muškarce</span>
+                    </div>
+                    <div class="hover-content">
+                      <div class="inner">
+                        <h4>Muškarci</h4>
+                        <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
+                        <div class="main-border-button">
+                          <a href="#">Saznaj više</a>
+                        </div>
+                      </div>
+                    </div>
+                    <img src="{% static 'images/muski.jpg' %}" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="right-first-image">
+                  <div class="thumb">
+                    <div class="inner-content">
+                      <h4>Djeca</h4>
+                      <span>Najbolje Dječje Frizure</span>
+                    </div>
+                    <div class="hover-content">
+                      <div class="inner">
+                        <h4>Djeca</h4>
+                        <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
+                        <div class="main-border-button">
+                          <a href="#">Saznaj više</a>
+                        </div>
+                      </div>
+                    </div>
+                    <img src="{% static 'images/djecja.jpg' %}" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="right-first-image">
+                  <div class="thumb">
+                    <div class="inner-content">
+                      <h4>Naši produkti</h4>
+                      <!--<span>Naši Produkti</span>-->
+                    </div>
+                    <div class="hover-content">
+                      <div class="inner">
+                        <h4>Naši produkti</h4>
+                        <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
+                        <div class="main-border-button">
+                          <a href="#">Saznaj više</a>
+                        </div>
+                      </div>
+                    </div>
+                    <img src="{% static 'images/produkt.jpg' %}" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- ***** Subscribe Area Ends ***** -->
-    <!-- ***** Footer Start ***** -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="first-item">
-              <div class="logo">
-                <img src="{% static 'images/white-logo.png' %}"
-                     alt="hexashop ecommerce templatemo" />
+  </div>
+  <!-- ***** Men Area Ends ***** -->
+  <!-- ***** Women Area Starts ***** -->
+  <section class="section" id="women">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h2>Ženske Frizure</h2>
+            <!--<span>Details to details is what makes Hexashop different from the other themes.</span>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="women-item-carousel">
+            <div class="owl-women-item owl-carousel">
+              <div class="item">
+                <div class="thumb">
+                  <div class="hover-content">
+                    <ul>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-eye"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-star"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="{% static 'images/zenska/zenska1.jpg' %}" alt="" />
+                </div>
+                <div class="down-content">
+                  <h4>Ime Frizure / Šminke</h4>
+                  <span>55.00€</span>
+                  <ul class="stars">
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                  </ul>
+                </div>
               </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="hover-content">
+                    <ul>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-eye"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-star"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="{% static 'images/zenska/zenska2.jpg' %}" alt="" />
+                </div>
+                <div class="down-content">
+                  <h4>Ime Frizure / Šminke</h4>
+                  <span>45.00€</span>
+                  <ul class="stars">
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="hover-content">
+                    <ul>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-eye"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-star"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="{% static 'images/zenska/zenska3.jpg' %}" alt="" />
+                </div>
+                <div class="down-content">
+                  <h4>Ime Frizure / Šminke</h4>
+                  <span>50.00€</span>
+                  <ul class="stars">
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="hover-content">
+                    <ul>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-eye"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-star"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="{% static 'images/zenska/zenska4.jpg' %}" alt="" />
+                </div>
+                <div class="down-content">
+                  <h4>Ime Frizure / Šminke</h4>
+                  <span>60.00€</span>
+                  <ul class="stars">
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Women Area Ends ***** -->
+  <!-- ***** Main Banner Area End ***** -->
+  <!-- ***** Men Area Starts ***** -->
+  <section class="section" id="men">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h2>Dječje Frizure</h2>
+            <!--<span>Details to details is what makes Hexashop different from the other themes.</span>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="men-item-carousel">
+            <div class="owl-men-item owl-carousel">
+              <div class="item">
+                <div class="thumb">
+                  <div class="hover-content">
+                    <ul>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-eye"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-star"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="{% static 'images/djecja/djecje1.jpg' %}" alt="" />
+                </div>
+                <div class="down-content">
+                  <h4>Ime Frizure</h4>
+                  <span>20.00€</span>
+                  <ul class="stars">
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="hover-content">
+                    <ul>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-eye"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-star"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="{% static 'images/djecja/djecja2.jpg' %}" alt="" />
+                </div>
+                <div class="down-content">
+                  <h4>Ime Frizure</h4>
+                  <span>30.00€</span>
+                  <ul class="stars">
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="hover-content">
+                    <ul>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-eye"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-star"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="{% static 'images/djecja/djecja3.jpg' %}" alt="" />
+                </div>
+                <div class="down-content">
+                  <h4>Ime Frizure</h4>
+                  <span>25.00€</span>
+                  <ul class="stars">
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="hover-content">
+                    <ul>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-eye"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-star"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="{% static 'images/djecja/djecja4.jpg' %}" alt="" />
+                </div>
+                <div class="down-content">
+                  <h4>Ime Frizure</h4>
+                  <span>35.00€</span>
+                  <ul class="stars">
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Product Area Starts ***** -->
+  <section class="section" id="kids">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h2>Naši Produkti</h2>
+            <!--<span>Details to details is what makes Hexashop different from the other themes.</span>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="kid-item-carousel">
+            <div class="owl-kid-item owl-carousel">
+              <div class="item">
+                <div class="thumb">
+                  <div class="hover-content">
+                    <ul>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-eye"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-star"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="{% static 'images/produkti/produkt1.jpg' %}" alt="" />
+                </div>
+                <div class="down-content">
+                  <h4>Naslov Proizvoda</h4>
+                  <span>55.00€</span>
+                  <ul class="stars">
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="hover-content">
+                    <ul>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-eye"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-star"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="{% static 'images/produkti/produkt2.jpg' %}" alt="" />
+                </div>
+                <div class="down-content">
+                  <h4>Naslov Proizvoda</h4>
+                  <span>48.00€</span>
+                  <ul class="stars">
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="hover-content">
+                    <ul>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-eye"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-star"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="{% static 'images/produkti/produkt3.jpg' %}" alt="" />
+                </div>
+                <div class="down-content">
+                  <h4>Naslov Proizvoda</h4>
+                  <span>48.00€</span>
+                  <ul class="stars">
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="hover-content">
+                    <ul>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-eye"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-star"></i></a>
+                      </li>
+                      <li>
+                        <a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="{% static 'images/produkti/produkt4.jpg' %}" alt="" />
+                </div>
+                <div class="down-content">
+                  <h4>Naslov Proizvoda</h4>
+                  <span>46.00€</span>
+                  <ul class="stars">
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Kids Area Ends ***** -->
+  <!-- ***** Explore Area Starts ***** -->
+  <section class="section" id="explore">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="left-content">
+            <h2>Istraži naše proizvode</h2>
+            <span>Actyva je linija profesionalnih šampona talijanske tvrtke Kemon, namijenjena različitim potrebama kose i vlasišta. Svaki šampon iz ove linije formuliran je kako bi pružio specifičnu njegu, koristeći kombinaciju prirodnih sastojaka i napredne tehnologije.</span>
+            <div class="quote">
+              <i class="fa fa-quote-left"></i>
+              <p>DODATI TEKST PO ZELJI</p>
+            </div>
+            <p>
+              Kemonova Actyva linija nastoji spojiti znanost i prirodu, koristeći više od 40 sastojaka prirodnog podrijetla koji djeluju u sinergiji s najnovijim dostignućima kozmetičkih istraživanja. Profesionalni tretmani iz ove linije formulirani su kako bi poboljšali ljepotu kose i održali zdravlje vlasišta, pružajući vidljive rezultate odmah nakon upotrebe.
+            </p>
+            <div class="main-border-button">
+              <a href="products.html">Istraži više</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-content">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="leather">
+                  <h4>ACTYVA</h4>
+                  <span>colore brillante</span>
+                  <br />
+                  <span>SHAMPOO</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="first-image">
+                  <img src="{% static 'images/explore_produkt.jpg' %}" alt="" />
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="second-image">
+                  <img src="{% static 'images/explore_produkt1.jpg' %}" alt="" />
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="types">
+                  <h4>ACTYVA</h4>
+                  <span>linfa solare</span>
+                  <br />
+                  <span>SHAMPOO</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Explore Area Ends ***** -->
+  <!-- ***** Social Area Starts ***** -->
+  <section class="section" id="social">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Pratite nas na društvenim mrežama</h2>
+            <p>
+              Budite u toku s najnovijim vijestima, ponudama i inspiracijama – zapratite nas na našim društvenim mrežama i pridružite se našoj zajednici!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row images">
+        <div class="col-2">
+          <div class="thumb">
+            <div class="icon">
+              <a href="http://instagram.com">
+                <h6>Products</h6>
+                <i class="fa fa-instagram"></i>
+              </a>
+            </div>
+            <img src="{% static 'images/insta1.jpg' %}" alt="" />
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="thumb">
+            <div class="icon">
+              <a href="http://instagram.com">
+                <h6>Makeup</h6>
+                <i class="fa fa-instagram"></i>
+              </a>
+            </div>
+            <img src="{% static 'images/insta2.jpg' %}" alt="" />
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="thumb">
+            <div class="icon">
+              <a href="http://instagram.com">
+                <h6>Brand</h6>
+                <i class="fa fa-instagram"></i>
+              </a>
+            </div>
+            <img src="{% static 'images/insta3.jpg' %}" alt="" />
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="thumb">
+            <div class="icon">
+              <a href="http://instagram.com">
+                <h6>New</h6>
+                <i class="fa fa-instagram"></i>
+              </a>
+            </div>
+            <img src="{% static 'images/insta4.jpg' %}" alt="" />
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="thumb">
+            <div class="icon">
+              <a href="http://instagram.com">
+                <h6>Fashion</h6>
+                <i class="fa fa-instagram"></i>
+              </a>
+            </div>
+            <img src="{% static 'images/insta5.jpg' %}" alt="" />
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="thumb">
+            <div class="icon">
+              <a href="http://instagram.com">
+                <h6>Aesthetic</h6>
+                <i class="fa fa-instagram"></i>
+              </a>
+            </div>
+            <img src="{% static 'images/insta6.jpg' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Social Area Ends ***** -->
+  <!-- ***** Subscribe Area Starts ***** -->
+  <div class="subscribe">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="section-heading">
+            <h2>Naruči Se Putem E-Maila</h2>
+            <span>Napiši nam svoje ime, frizuru i datum kada bi se htio naručiti</span>
+          </div>
+          <form id="subscribe" action="" method="get">
+            <div class="row">
+              <div class="col-lg-5">
+                <fieldset>
+                  <input name="name" type="text" id="name" placeholder="Tvoje Ime" required="" />
+                </fieldset>
+              </div>
+              <div class="col-lg-5">
+                <fieldset>
+                  <input name="email"
+                         type="text"
+                         id="email"
+                         pattern="[^ @]*@[^ @]*"
+                         placeholder="Tvoje Email Adresa"
+                         required="" />
+                </fieldset>
+              </div>
+              <div class="col-lg-2">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="main-dark-button">
+                    <i class="fa fa-paper-plane"></i>
+                  </button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-4">
+          <div class="row">
+            <div class="col-6">
               <ul>
                 <li>
-                  <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47661667718262f9:0xeff017b56305ebe4?source=g.page.default">Ul. Ljudevita Vukotinovića 2, 48260, Križevci</a>
+                  Lokacija Salona:
+                  <br />
+                  <span>Ul. Ljudevita Vukotinovića 2, 48260, Križevci</span>
                 </li>
                 <li>
-                  <p style="color: white">frizerski.studio.jelena@gmail.com</p>
-                </li>
-                <li>
-                  <p style="color: white">048 682 151</p>
+                  Telefon:
+                  <br />
+                  <span>048 682 151</span>
                 </li>
               </ul>
             </div>
-          </div>
-          <div class="col-lg-3">
-            <h4>Frizure</h4>
-            <ul>
-              <li>
-                <a href="#">Mušte Frizure</a>
-              </li>
-              <li>
-                <a href="#">Ženske Frizure</a>
-              </li>
-              <li>
-                <a href="#">Dječje Frizure</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-3">
-            <h4>Korisne Stranice</h4>
-            <ul>
-              <li>
-                <a href="#">Početna Stranica</a>
-              </li>
-              <li>
-                <a href="#">O Nama</a>
-              </li>
-              <li>
-                <a href="#">Kontaktirajte Nas</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-3">
-            <h4>Pomoć i Informacije</h4>
-            <ul>
-              <li>
-                <a href="#">Pomoć</a>
-              </li>
-              <li>
-                <a href="#">Često Postavljena Pitanja</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-12">
-            <div class="under-footer">
-              <p>
-                Copyright © 2025 Frizerski Salon Jelena Co., Ltd. Sva prava zadržana.
-                <br />
-              </p>
+            <div class="col-6">
               <ul>
                 <li>
-                  <a href="https://www.facebook.com/frizerski.studio.jelena/?locale=hr_HR"><i class="fa fa-facebook"></i></a>
+                  Radno vrijeme:
+                  <br />
+                  <span>07:00 - 19:00 Pon - Pet</span>
+                  <span>07:00 - 15:00 Sub</span>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/jelenafrizerskisalon/"><i class="fa fa-instagram"></i></a>
+                  Email:
+                  <br />
+                  <span>frizerski.studio.jelena@gmail.com</span>
+                </li>
+                <li>
+                  Social Media:
+                  <br />
+                  <span><a href="https://www.facebook.com/frizerski.studio.jelena/?locale=hr_HR">Facebook</a>, <a href="https://www.instagram.com/jelenafrizerskisalon/">Instagram</a></span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-    <!-- jQuery -->
-    <script src="{% static 'js/jquery-2.1.0.min.js'%}"></script>
-    <!-- Bootstrap -->
-    <script src="{% static 'js/popper.js'%}"></script>
-    <script src="{% static 'js/bootstrap.min.js'%}"></script>
-    <!-- Plugins -->
-    <script src="{% static 'js/owl-carousel.js'%}"></script>
-    <script src="{% static 'js/accordions.js'%}"></script>
-    <script src="{% static 'js/datepicker.js'%}"></script>
-    <script src="{% static 'js/scrollreveal.min.js'%}"></script>
-    <script src="{% static 'js/waypoints.min.js'%}"></script>
-    <script src="{% static 'js/jquery.counterup.min.js'%}"></script>
-    <script src="{% static 'js/imgfix.min.js'%}"></script>
-    <script src="{% static 'js/slick.js'%}"></script>
-    <script src="{% static 'js/lightbox.js'%}"></script>
-    <script src="{% static 'js/isotope.js'%}"></script>
-    <!-- Global Init -->
-    <script src="{% static 'js/custom.js'%}"></script>
-    <script>
-      $(function() {
-        var selectedClass = "";
-        $("p").click(function() {
-          selectedClass = $(this).attr("data-rel");
-          $("#portfolio").fadeTo(50, 0.1);
-          $("#portfolio div").not("." + selectedClass).fadeOut();
-          setTimeout(function() {
-            $("." + selectedClass).fadeIn();
-            $("#portfolio").fadeTo(50, 1);
-          }, 500);
-
-        });
-      });
-    </script>
-  </body>
-</html>
+    </div>
+  </div>
+{% endblock %}

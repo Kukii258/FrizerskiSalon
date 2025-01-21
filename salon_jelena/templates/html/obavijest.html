@@ -1,0 +1,43 @@
+{% extends "html/base.html" %}
+
+{% load static i18n %}
+
+{% block title %}Naslovnica - Frizerski Salon Jelena{% endblock %}
+{% block content %}
+  <div class="obavijest">
+    <section class="section" id="explore">
+      <div class="container">
+        <div class="row">
+          {% if obavijest.slika %}
+            <div class="col-lg-6">
+              <div class="left-content">
+                <h2>{{ obavijest.naslov }}</h2>
+                <span>{{ obavijest.pod_naslov }}</span>
+                <p>{{ obavijest.tekst }}</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-content">
+                <div class="single-image">
+                  <img src="{{ obavijest.slika.url }}"
+                       style="width: 100%;
+                              height: auto"
+                       alt="Obavijest Slika" />
+                </div>
+              </div>
+            </div>
+          {% else %}
+            <div class="col-lg-10">
+              <div class="left-content content text-center">
+                <h2>{{ obavijest.naslov }}</h2>
+                <span>{{ obavijest.pod_naslov }}</span>
+                <p>{{ obavijest.tekst }}</p>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

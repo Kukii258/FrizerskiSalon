@@ -10,6 +10,7 @@ from django.views.generic import TemplateView
 from jelena import views
 
 urlpatterns = [
+    path("obavijest/<int:obavijest_id>", views.obavijest, name="obavijest"),
     path("", views.naslovnica, name="naslovnica"),
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(

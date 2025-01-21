@@ -1,0 +1,232 @@
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+          rel="stylesheet" />
+    <title>
+      {% block title %}{% endblock %}
+    Frizerski Salon Jelena</title>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet"
+          type="text/css"
+          href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet"
+          type="text/css"
+          href="{% static 'css/font-awesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/templatemo-hexashop.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}" />
+    <!--
+TemplateMo 571 Hexashop
+
+https://templatemo.com/tm-571-hexashop
+
+-->
+  </head>
+  <body id="{% block bodyId %}{% endblock %}">
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+      <div class="jumper">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a href="{% url 'naslovnica' %}" class="logo">
+                <img id="luka" src="{% static 'images/logo.png' %}" />
+              </a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+              <ul class="nav">
+                <li class="scroll-to-section">
+                  <a href="{% url 'naslovnica' %}" class="active">Početna</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="#men">Dječje</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="#women">Žene</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="#kids">Produkti</a>
+                </li>
+                <li class="submenu">
+                  <a href="javascript:;">Stranice</a>
+                  <ul>
+                    <li>
+                      <a href="about.html">O nama</a>
+                    </li>
+                    <!--<li>
+                      <a href="single-product.html">Single Product</a>
+                    </li>-->
+                    <li>
+                      <a href="contact.html">Kontaktirajte nas</a>
+                    </li>
+                  </ul>
+                </li>
+                <!--<li class="submenu">
+                  <a href="javascript:;">Features</a>
+                  <ul>
+                    <li>
+                      <a href="#">Features Page 1</a>
+                    </li>
+                    <li>
+                      <a href="#">Features Page 2</a>
+                    </li>
+                    <li>
+                      <a href="#">Features Page 3</a>
+                    </li>
+                    <li>
+                      <a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="#explore">Explore</a>
+                </li>
+                -->
+              </ul>
+              <a class='menu-trigger'>
+                <span>Menu</span>
+              </a>
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+    <!-- ***** Subscribe Area Ends ***** -->
+    <!-- ***** Footer Start ***** -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="first-item">
+              <div class="logo">
+                <img src="{% static 'images/white-logo.png' %}"
+                     alt="hexashop ecommerce templatemo" />
+              </div>
+              <ul>
+                <li>
+                  <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47661667718262f9:0xeff017b56305ebe4?source=g.page.default">Ul. Ljudevita Vukotinovića 2, 48260, Križevci</a>
+                </li>
+                <li>
+                  <p style="color: white">frizerski.studio.jelena@gmail.com</p>
+                </li>
+                <li>
+                  <p style="color: white">048 682 151</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <h4>Frizure</h4>
+            <ul>
+              <li>
+                <a href="#">Mušte Frizure</a>
+              </li>
+              <li>
+                <a href="#">Ženske Frizure</a>
+              </li>
+              <li>
+                <a href="#">Dječje Frizure</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <h4>Korisne Stranice</h4>
+            <ul>
+              <li>
+                <a href="#">Početna Stranica</a>
+              </li>
+              <li>
+                <a href="#">O Nama</a>
+              </li>
+              <li>
+                <a href="#">Kontaktirajte Nas</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <h4>Pomoć i Informacije</h4>
+            <ul>
+              <li>
+                <a href="#">Pomoć</a>
+              </li>
+              <li>
+                <a href="#">Često Postavljena Pitanja</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-12">
+            <div class="under-footer">
+              <p>
+                Copyright © 2025 Frizerski Salon Jelena Co., Ltd. Sva prava zadržana.
+                <br />
+              </p>
+              <ul>
+                <li>
+                  <a href="https://www.facebook.com/frizerski.studio.jelena/?locale=hr_HR"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/jelenafrizerskisalon/"><i class="fa fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery-2.1.0.min.js'%}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'js/popper.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <!-- Plugins -->
+    <script src="{% static 'js/owl-carousel.js'%}"></script>
+    <script src="{% static 'js/accordions.js'%}"></script>
+    <script src="{% static 'js/datepicker.js'%}"></script>
+    <script src="{% static 'js/scrollreveal.min.js'%}"></script>
+    <script src="{% static 'js/waypoints.min.js'%}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js'%}"></script>
+    <script src="{% static 'js/imgfix.min.js'%}"></script>
+    <script src="{% static 'js/slick.js'%}"></script>
+    <script src="{% static 'js/lightbox.js'%}"></script>
+    <script src="{% static 'js/isotope.js'%}"></script>
+    <!-- Global Init -->
+    <script src="{% static 'js/custom.js'%}"></script>
+    <script>
+      $(function() {
+        var selectedClass = "";
+        $("p").click(function() {
+          selectedClass = $(this).attr("data-rel");
+          $("#portfolio").fadeTo(50, 0.1);
+          $("#portfolio div").not("." + selectedClass).fadeOut();
+          setTimeout(function() {
+            $("." + selectedClass).fadeIn();
+            $("#portfolio").fadeTo(50, 1);
+          }, 500);
+
+        });
+      });
+    </script>
+  </body>
+</html>

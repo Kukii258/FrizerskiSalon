@@ -2383,3 +2383,7 @@ responsive
   object-fit: cover; /* Ensures the image fills the rectangle without distortion */
   border-radius: 10px; /* Optional: Rounded corners */
 }
+
+.obavijest{
+  margin-top: 50px;
+}
