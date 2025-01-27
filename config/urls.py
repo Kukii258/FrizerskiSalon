@@ -7,11 +7,23 @@ from django.urls import path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
 
-from jelena import views
+from jelena import views, models
 
 urlpatterns = [
-    path("obavijest/<int:obavijest_id>", views.obavijest, name="obavijest"),
+    #Galerije
+    path('zenska-galerija/', views.galerija, {'model': models.Zenske_frizure, 'template_name': 'html/zenska_galerija.html'},
+         name='zenska_galerija'),
+    path('muska-galerija/', views.galerija, {'model': models.Muske_frizure, 'template_name': 'html/muska_galerija.html'},
+         name='muska_galerija'),
+    path('djecja-galerija', views.galerija, {'model': models.Djecje_frizure, 'template_name': 'html/djecja_galerija.html'},
+         name='djecja_galerija'),
+    path('produkti-galerija/', views.galerija, {'model': models.Produkti, 'template_name': 'html/produkti_galerija.html'},
+         name='produkti_galerija'),
+
+    #Index
     path("", views.naslovnica, name="naslovnica"),
+    path("obavijest/<int:obavijest_id>", views.obavijest, name="obavijest"),
+
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(
         "about/",

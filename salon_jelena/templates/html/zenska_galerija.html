@@ -1,0 +1,77 @@
+{% extends "html/base.html" %}
+
+{% load static i18n %}
+
+{% block title %}Naslovnica - Frizerski Salon Jelena{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home - Pintereso Bootstrap Template</title>
+    <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+</head>
+
+<body>
+
+
+    <h1 class="font-weight-bold title" style="margin-top: 80px;">Ženska Galerija Frizura</h1>
+
+    <section class="mt-4 mb-5">
+    <div class="container mb-4">
+
+    </div>
+    <div class="container-fluid">
+    	<div class="row">
+    		<div class="card-columns">
+
+          {% for slika in slike %}
+    			<div class="card card-pin">
+    				{% if slika.slika %}
+              <img class="card-img" src="{{ slika.slika.url }}" alt="{{ slika.ime }}">
+            {% elif slika.video %}
+              <video class="card-video" controls>
+                  <source src="{{ slika.video.url }}" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+            {% endif %}
+            <div class="card-info">
+              <span class="card-name">{{ slika.ime }}</span>
+              <span class="card-price">{{ slika.cijena }}e</span>
+            </div>
+          <div class="card-opis">
+              <span class="card-name">{{ slika.opis }}</span>
+            </div>
+
+    			</div>
+          {% endfor %}
+    		</div>
+    	</div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <button class="modal-prev" id="modalPrev">&lt;</button>
+        <img class="modal-content" id="modalImg">
+        <button class="modal-next" id="modalNext">&gt;</button>
+        <div id="caption"></div>
+    </div>
+
+
+    </section>
+
+    </main>
+
+    <script src="{% static 'js/app.js'%}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock %}

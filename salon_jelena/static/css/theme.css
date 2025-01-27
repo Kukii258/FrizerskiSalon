@@ -1,0 +1,276 @@
+/* line 1, src/assets/scss/theme.scss */
+body {
+  padding-top: 70px; }
+
+/* line 2, src/assets/scss/theme.scss */
+img {
+  max-width: 100%; }
+
+/* line 5, src/assets/scss/theme.scss */
+a, .a:hover {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s; }
+
+/* line 8, src/assets/scss/theme.scss */
+.container-fluid {
+  width: 94%;
+  margin: 0px auto;
+  max-width: 94%; }
+
+/* line 13, src/assets/scss/theme.scss */
+.border-round-0 {
+  border-radius: 0; }
+
+/* line 16, src/assets/scss/theme.scss */
+.mt-neg100 {
+  margin-top: -100px; }
+
+/* line 19, src/assets/scss/theme.scss */
+.min-50vh {
+  min-height: 50vh; }
+
+/* line 22, src/assets/scss/theme.scss */
+.dropdown-header {
+  font-size: 1.5rem; }
+
+/* line 25, src/assets/scss/theme.scss */
+.fixed-top {
+  border-bottom: 1px solid #f1f1f1; }
+
+/* line 28, src/assets/scss/theme.scss */
+footer.footer {
+  border-top: 1px solid #f1f1f1; }
+
+/* line 31, src/assets/scss/theme.scss */
+.nav-link, .dropdown-item {
+  font-weight: 700; }
+
+/* line 32, src/assets/scss/theme.scss */
+.navbar {
+  padding: 0.5rem 2rem; }
+
+/* line 34, src/assets/scss/theme.scss */
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+  background-color: #008CBA; }
+
+/* line 46, src/assets/scss/theme.scss */
+.card {
+  border: 0; }
+
+/* line 47, src/assets/scss/theme.scss */
+.card-pin:hover .overlay {
+    opacity: 0; /* Hide overlay */
+    background-color: transparent; /* Ensure no color is visible */
+    cursor: default; /* Use default cursor instead of zoom-in */
+}
+
+
+/* line 55, src/assets/scss/theme.scss */
+.more {
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-transform: uppercase;
+  -webkit-transform: translate(-20%, -20%);
+          transform: translate(-20%, -20%);
+  -ms-transform: translate(-50%, -50%); }
+
+/* line 66, src/assets/scss/theme.scss */
+.card-pin:hover .card-title {
+  color: #ffffff;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.2em; }
+
+/* line 73, src/assets/scss/theme.scss */
+.card-pin:hover .more a {
+  text-decoration: none;
+  color: #ffffff; }
+
+/* line 78, src/assets/scss/theme.scss */
+.card-pin:hover .download a {
+  text-decoration: none;
+  color: #ffffff; }
+
+/* line 83, src/assets/scss/theme.scss */
+.social {
+  position: relative;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
+
+/* line 88, src/assets/scss/theme.scss */
+.social .fa {
+  margin: 0 3px; }
+
+
+
+
+/* Ensure overlay doesn't block clicks */
+.card-pin .overlay {
+   pointer-events: none; /* Makes overlay non-interactive */
+}
+
+/* Allow images to zoom and go outside the borders */
+.card-pin {
+   position: relative;
+   overflow: visible; /* Images can extend beyond borders */
+}
+
+.card-pin img, .card-pin:hover video {
+   transition: transform 0.3s ease;
+}
+
+.card-pin:hover img, .card-pin:hover video {
+   transform: scale(1.1); /* Add zoom-in effect */
+   z-index: 2; /* Make it appear above other elements */
+}
+
+
+
+/* Ensure links are clickable */
+.card-pin a {
+   position: relative;
+   z-index: 3; /* Bring links above overlays */
+   display: inline-block; /* Ensure proper click area */
+}
+
+/* Modal styles */
+.modal {
+   display: none; /* Hidden by default */
+   position: fixed;
+   z-index: 1000;
+   padding-top: 10%;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Center modal content */
+.modal-content {
+   margin: 0 auto; /* Horizontally center */
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); /* Center both vertically and horizontally */
+   width: 80%;
+   max-width: 700px;
+}
+
+
+
+
+
+/* Close Button */
+.close {
+   position: absolute;
+   top: 15px;
+   right: 35px;
+   color: #fff;
+   font-size: 40px;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+/* Zoom animation */
+@keyframes zoomIn {
+   from {
+      transform: scale(0.7);
+   }
+   to {
+      transform: scale(1);
+   }
+}
+
+/* Align name and price */
+.card-info {
+    display: flex;
+    justify-content: space-between; /* Push items to the edges */
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333; /* Darker color for better visibility */
+    background-color: #f8f9fa; /* Light background for contrast */
+}
+
+/* Style name and price */
+.card-info .card-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.card-info .card-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #555; /* Bootstrap danger color for price */
+}
+
+.card-video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.title {
+   text-align: left; /* Align text to the left */
+    margin: 2rem;
+}
+
+.card-opis {
+    display: flex;
+    padding: 10px;
+    color: #333; /* Darker color for better visibility */
+    background-color: #f8f9fa; /* Light background for contrast */
+    margin-top: -15px;
+}
+
+.card-opis .card-name {
+    font-size: 1rem;
+    color: #555;
+}
+.modal-prev, .modal-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none; /* Transparent background */
+    color: grey; /* Professional grey color for arrows */
+    border: none; /* Remove borders */
+    font-size: 36px; /* Increase font size for bold arrows */
+    font-weight: bold; /* Make arrows bold */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    z-index: 1000;
+    transition: color 0.3s ease; /* Smooth hover effect */
+    user-select: none; /* Prevent text selection */
+    outline: none; /* Remove focus outline */
+}
+
+.modal-prev {
+    left: 20px; /* Position on the left */
+}
+
+.modal-next {
+    right: 20px; /* Position on the right */
+}
+
+.modal-prev:hover, .modal-next:hover {
+    color: black; /* Darker grey on hover for emphasis */
+}
+
+.modal-prev:focus, .modal-next:focus {
+    outline: none; /* Ensure no outline when focused */
+}
