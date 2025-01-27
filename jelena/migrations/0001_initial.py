@@ -18,8 +18,8 @@ class Migration(migrations.Migration):
                 ('naslov', models.CharField(max_length=100)),
                 ('pod_naslov', models.CharField(max_length=150)),
                 ('tekst', models.CharField(blank=True)),
-                ('datum', models.DateTimeField()),
                 ('url', models.CharField(blank=True, max_length=512, null=True)),
+                ('slika',models.IntegerField(blank=True)),
             ],
             options={
                 'verbose_name': 'Obavijesti',

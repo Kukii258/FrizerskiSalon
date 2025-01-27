@@ -13,6 +13,7 @@
           <div class="left-content">
             <div class="thumb">
               <div class="inner-content">
+              {% if obavijest %}
                 <h4>{{ obavijest.naslov }}</h4>
                 <span>{{ obavijest.pod_naslov }}</span>
                 <div class="main-border-button">
@@ -22,6 +23,7 @@
                     <a href="{% url 'obavijest' obavijest.pk %}">PROČITAJ VIŠE -></a>
                   {% endif %}
                 </div>
+              {% endif %}
               </div>
               <img src="{% static 'images/obavijest.jpg' %}" alt="" />
             </div>
@@ -42,7 +44,7 @@
                         <h4>Žene</h4>
                         <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
                         <div class="main-border-button">
-                          <a href="#">Saznaj Više</a>
+                          <a href="{% url 'zenska_galerija' %}">Saznaj Više</a>
                         </div>
                       </div>
                     </div>
@@ -62,7 +64,7 @@
                         <h4>Muškarci</h4>
                         <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
                         <div class="main-border-button">
-                          <a href="#">Saznaj više</a>
+                          <a href="{% url 'muska_galerija' %}">Saznaj više</a>
                         </div>
                       </div>
                     </div>
@@ -82,7 +84,7 @@
                         <h4>Djeca</h4>
                         <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
                         <div class="main-border-button">
-                          <a href="#">Saznaj više</a>
+                          <a href="{% url 'djecja_galerija' %}">Saznaj više</a>
                         </div>
                       </div>
                     </div>
@@ -102,7 +104,7 @@
                         <h4>Naši produkti</h4>
                         <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
                         <div class="main-border-button">
-                          <a href="#">Saznaj više</a>
+                          <a href="{% url 'produkti_galerija' %}">Saznaj više</a>
                         </div>
                       </div>
                     </div>
@@ -149,11 +151,11 @@
                       </li>
                     </ul>
                   </div>
-                  <img src="{% static 'images/zenska/zenska1.jpg' %}" alt="" />
+                  <img src="{{ zenske_zadnje_slike.0.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
-                  <h4>Ime Frizure / Šminke</h4>
-                  <span>55.00€</span>
+                  <h4>{{ zenske_zadnje_slike.0.ime }}</h4>
+                  <span>{{ zenske_zadnje_slike.0.cijena }}</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -188,11 +190,11 @@
                       </li>
                     </ul>
                   </div>
-                  <img src="{% static 'images/zenska/zenska2.jpg' %}" alt="" />
+                   <img src="{{ zenske_zadnje_slike.1.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
-                  <h4>Ime Frizure / Šminke</h4>
-                  <span>45.00€</span>
+                  <h4>{{ zenske_zadnje_slike.1.ime }}</h4>
+                  <span>{{ zenske_zadnje_slike.1.cijena }}</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -227,11 +229,11 @@
                       </li>
                     </ul>
                   </div>
-                  <img src="{% static 'images/zenska/zenska3.jpg' %}" alt="" />
+                  <img src="{{ zenske_zadnje_slike.2.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
-                  <h4>Ime Frizure / Šminke</h4>
-                  <span>50.00€</span>
+                  <h4>{{ zenske_zadnje_slike.2.ime }}</h4>
+                  <span>{{ zenske_zadnje_slike.2.cijena }}</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -266,11 +268,11 @@
                       </li>
                     </ul>
                   </div>
-                  <img src="{% static 'images/zenska/zenska4.jpg' %}" alt="" />
+                  <img src="{{ zenske_zadnje_slike.3.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
-                  <h4>Ime Frizure / Šminke</h4>
-                  <span>60.00€</span>
+                  <h4>{{ zenske_zadnje_slike.3.ime }}</h4>
+                  <span>{{ zenske_zadnje_slike.3.cijena }}</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -330,11 +332,11 @@
                       </li>
                     </ul>
                   </div>
-                  <img src="{% static 'images/djecja/djecje1.jpg' %}" alt="" />
+                  <img src="{{ djecje_zadnje_slike.0.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
-                  <h4>Ime Frizure</h4>
-                  <span>20.00€</span>
+                  <h4>{{ djecje_zadnje_slike.0.ime }}</h4>
+                  <span>{{ djecje_zadnje_slike.0.cijena }}</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -369,11 +371,11 @@
                       </li>
                     </ul>
                   </div>
-                  <img src="{% static 'images/djecja/djecja2.jpg' %}" alt="" />
+                  <img src="{{ djecje_zadnje_slike.1.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
-                  <h4>Ime Frizure</h4>
-                  <span>30.00€</span>
+                  <h4>{{ djecje_zadnje_slike.1.ime }}</h4>
+                  <span>{{ djecje_zadnje_slike.1.cijena }}</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -408,11 +410,11 @@
                       </li>
                     </ul>
                   </div>
-                  <img src="{% static 'images/djecja/djecja3.jpg' %}" alt="" />
+                  <img src="{{ djecje_zadnje_slike.2.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
-                  <h4>Ime Frizure</h4>
-                  <span>25.00€</span>
+                  <h4>{{ djecje_zadnje_slike.2.ime }}</h4>
+                  <span>{{ djecje_zadnje_slike.2.cijena }}</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -447,11 +449,11 @@
                       </li>
                     </ul>
                   </div>
-                  <img src="{% static 'images/djecja/djecja4.jpg' %}" alt="" />
+                  <img src="{{ djecje_zadnje_slike.3.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
-                  <h4>Ime Frizure</h4>
-                  <span>35.00€</span>
+                  <h4>{{ djecje_zadnje_slike.3.ime }}</h4>
+                  <span>{{ djecje_zadnje_slike.3.cijena }}</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -509,11 +511,11 @@
                       </li>
                     </ul>
                   </div>
-                  <img src="{% static 'images/produkti/produkt1.jpg' %}" alt="" />
+                  <img src="{{ produkt_zadnje_slike.0.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
-                  <h4>Naslov Proizvoda</h4>
-                  <span>55.00€</span>
+                  <h4>{{ produkt_zadnje_slike.0.ime }}</h4>
+                  <span>{{ produkt_zadnje_slike.0.cijena }}</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -548,11 +550,11 @@
                       </li>
                     </ul>
                   </div>
-                  <img src="{% static 'images/produkti/produkt2.jpg' %}" alt="" />
+                  <img src="{{ produkt_zadnje_slike.1.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
-                  <h4>Naslov Proizvoda</h4>
-                  <span>48.00€</span>
+                  <h4>{{ produkt_zadnje_slike.1.ime }}</h4>
+                  <span>{{ produkt_zadnje_slike.1.cijena }}</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -587,11 +589,11 @@
                       </li>
                     </ul>
                   </div>
-                  <img src="{% static 'images/produkti/produkt3.jpg' %}" alt="" />
+                  <img src="{{ produkt_zadnje_slike.2.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
-                  <h4>Naslov Proizvoda</h4>
-                  <span>48.00€</span>
+                  <h4>{{ produkt_zadnje_slike.2.ime }}</h4>
+                  <span>{{ produkt_zadnje_slike.2.cijena }}</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -626,11 +628,11 @@
                       </li>
                     </ul>
                   </div>
-                  <img src="{% static 'images/produkti/produkt4.jpg' %}" alt="" />
+                  <img src="{{ produkt_zadnje_slike.3.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
-                  <h4>Naslov Proizvoda</h4>
-                  <span>46.00€</span>
+                  <h4>{{ produkt_zadnje_slike.3.ime }}</h4>
+                  <span>{{ produkt_zadnje_slike.3.cijena }}</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>

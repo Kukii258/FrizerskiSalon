@@ -41,7 +41,7 @@ https://templatemo.com/tm-571-hexashop
     </div>
     <!-- ***** Preloader End ***** -->
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
+    <header class="header-area header-sticky" style="background: white">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -57,13 +57,16 @@ https://templatemo.com/tm-571-hexashop
                   <a href="{% url 'naslovnica' %}" class="active">Početna</a>
                 </li>
                 <li class="scroll-to-section">
-                  <a href="#men">Dječje</a>
+                  <a href="{% url 'zenska_galerija' %}">Žene</a>
                 </li>
                 <li class="scroll-to-section">
-                  <a href="#women">Žene</a>
+                  <a href="{% url 'muska_galerija' %}">Muškarci</a>
                 </li>
                 <li class="scroll-to-section">
-                  <a href="#kids">Produkti</a>
+                  <a href="{% url 'djecja_galerija' %}">Djeca</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="{% url 'produkti_galerija' %}">Produkti</a>
                 </li>
                 <li class="submenu">
                   <a href="javascript:;">Stranice</a>

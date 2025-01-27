@@ -1,6 +1,6 @@
 # ruff: noqa: ERA001, E501
 """Base settings to build other settings files upon."""
-
+import os
 import ssl
 from pathlib import Path
 
@@ -12,9 +12,11 @@ APPS_DIR = BASE_DIR / "salon_jelena"
 env = environ.Env()
 
 READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=False)
+
 if READ_DOT_ENV_FILE:
     # OS environment variables take precedence over variables from .env
     env.read_env(str(BASE_DIR / ".env"))
+
 
 # GENERAL
 # ------------------------------------------------------------------------------
@@ -47,11 +49,13 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
+BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
+
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR, '.env'))  # Force load the local .env file
+
 DATABASES = {
-    "default": env.db(
-        "DATABASE_URL",
-        default="postgres://localhost/salon_jelena",
-    ),
+    'default': env.db("DATABASE_URL", default="postgres://localhost/default"),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-DEFAULT_AUTO_FIELD
