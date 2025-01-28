@@ -57,6 +57,8 @@ def send_email(request):
 
     if email != potvrda_email:
         error_message = "Email adresa i potvrda email adrese se ne podudaraju."
+        print(email)
+        print(potvrda_email)
         return render(request, "html/index.html", {"error_message": error_message})
 
     sender_email = "salon.jelena.narucivanje@gmail.com"
