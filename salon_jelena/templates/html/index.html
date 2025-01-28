@@ -830,7 +830,7 @@
           <span>Napiši nam svoje ime, frizuru i datum kada bi se htio naručiti</span>
         </div>
 
- <form id="subscribe" action="{% url 'send_email' %}" method="post">
+<form id="subscribe" action="{% url 'send_email' %}" method="post">
   {% csrf_token %}
   <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 20px; align-items: start;">
     <!-- Left Side -->
@@ -841,6 +841,18 @@
           type="text"
           id="name"
           placeholder="Tvoje Ime"
+          value="{{ name|default_if_none:'' }}"
+          required
+          style="width: 100%;"
+        />
+      </fieldset>
+      <fieldset>
+        <input
+          name="broj_mobitela"
+          type="text"
+          id="broj_mobitela"
+          placeholder="Broj Mobitela"
+          value="{{ broj_mobitela|default_if_none:'' }}"
           required
           style="width: 100%;"
         />
@@ -853,7 +865,7 @@
           required
           rows="4"
           style="resize: both; width: 100%; margin-top: 10px;"
-        ></textarea>
+        >{{ frizura|default_if_none:'' }}</textarea>
       </fieldset>
     </div>
 
@@ -868,6 +880,7 @@
           type="email"
           id="email"
           placeholder="Tvoja Email Adresa"
+          value="{{ email|default_if_none:'' }}"
           required
           style="width: 100%;"
         />
@@ -876,7 +889,7 @@
         <input
           name="potvrda_email"
           type="email"
-          id="confirm_email"
+          id="potvrda_email"
           placeholder="Potvrda Email Adrese"
           required
           style="width: 100%;"
@@ -888,11 +901,14 @@
           type="date"
           id="datum"
           placeholder="Odaberi Datum"
+          value="{{ datum|default_if_none:'' }}"
           required
           style="width: 100%;"
         />
       </fieldset>
+
     </div>
+
     <!-- Send Button -->
        <div class="col-lg-2" style="margin-top: 4rem">
           <fieldset>
@@ -903,6 +919,8 @@
         </div>
       </div>
 </form>
+
+
 
 
     </div>

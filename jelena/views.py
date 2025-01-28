@@ -1,4 +1,6 @@
 # Create your views here.
+from datetime import datetime
+
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
@@ -49,17 +51,32 @@ def galerija(request, model, template_name):
 def send_email(request):
 
 
-    name = request.POST.get("name")
-    email = request.POST.get("email")
-    potvrda_email = request.POST.get("potvrda_email")
-    frizura = request.POST.get("frizura")
-    datum = request.POST.get("datum")
+    name = request.POST.get("name", "")
+    email = request.POST.get("email", "")
+    potvrda_email = request.POST.get("potvrda_email", "")
+    frizura = request.POST.get("frizura", "")
+    datum = request.POST.get("datum", "")
+    broj_mobitela = request.POST.get("broj_mobitela", "")
 
+    if datum:
+        parsed_date = datetime.strptime(datum, "%Y-%m-%d")
+        datum = parsed_date.strftime("%d/%m/%Y")
+
+    # Check for email mismatch
     if email != potvrda_email:
         error_message = "Email adresa i potvrda email adrese se ne podudaraju."
-        print(email)
-        print(potvrda_email)
-        return render(request, "html/index.html", {"error_message": error_message})
+        return render(
+            request,
+            "html/index.html",
+            {
+                "error_message": error_message,
+                "name": name,
+                "email": email,
+                "frizura": frizura,
+                "datum": datum,
+                "broj_mobitela": broj_mobitela,
+            },
+        )
 
     sender_email = "salon.jelena.narucivanje@gmail.com"
     sender_password = "aazqbvrsllernrks"
@@ -92,6 +109,7 @@ def send_email(request):
     Ime: {name}
     Frizura: {frizura}
     Datum: {datum}
+    Broj mobitela: {broj_mobitela}
     Email: {email}
 
     Srdačno,
