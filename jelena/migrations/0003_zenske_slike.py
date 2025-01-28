@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('ime', models.CharField(max_length=100)),
                 ('cijena', models.IntegerField()),
                 ('opis', models.CharField(blank=True, max_length=100)),
-                ('slika', models.ImageField(upload_to='zenske_frizure')),
+                ('slika', models.ImageField(upload_to='frizure')),
             ],
         ),
     ]

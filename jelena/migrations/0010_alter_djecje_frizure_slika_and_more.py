@@ -41,12 +41,12 @@ class Migration(migrations.Migration):
             field=models.FileField(blank=True, null=True, upload_to='frizure_video'),
         ),
         migrations.AlterField(
-            model_name='zenske_frizure',
+            model_name='frizure',
             name='slika',
             field=models.ImageField(blank=True, null=True, upload_to='frizure'),
         ),
         migrations.AlterField(
-            model_name='zenske_frizure',
+            model_name='frizure',
             name='video',
             field=models.FileField(blank=True, null=True, upload_to='frizure_video'),
         ),

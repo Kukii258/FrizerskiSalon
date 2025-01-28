@@ -9,26 +9,33 @@
   <div class="main-banner" id="top">
     <div class="container-fluid">
       <div class="row">
+
+
+
         <div class="col-lg-6">
           <div class="left-content">
-            <div class="thumb">
-              <div class="inner-content">
-              {% if obavijest %}
-                <h4>{{ obavijest.naslov }}</h4>
-                <span>{{ obavijest.pod_naslov }}</span>
-                <div class="main-border-button">
-                  {% if obavijest.url %}
-                    <a href="{{ obavijest.url }}">PROČITAJ VIŠE -></a>
-                  {% else %}
-                    <a href="{% url 'obavijest' obavijest.pk %}">PROČITAJ VIŠE -></a>
-                  {% endif %}
+            <div class="thumb" style="position: relative;">
+              {% for obavijest in obavijesti %} <!-- Limit to 3 obavijesti -->
+                <div class="inner-content inner-obavijest" id="obavijest-{{ forloop.counter }}">
+                  <h4 style="right: 10px">{{ obavijest.naslov }}</h4>
+                  <span>{{ obavijest.pod_naslov }}</span>
+                  <div class="main-border-button">
+                    {% if obavijest.url %}
+                      <a href="{{ obavijest.url }}">PROČITAJ VIŠE -></a>
+                    {% else %}
+                      <a href="{% url 'obavijest' obavijest.pk %}">PROČITAJ VIŠE -></a>
+                    {% endif %}
+                  </div>
                 </div>
-              {% endif %}
-              </div>
-              <img src="{% static 'images/obavijest.jpg' %}" alt="" />
+              {% endfor %}
+                <img src="{% static 'images/obavijest.jpg' %}" alt="" style="width: 100%; height: auto;" />
             </div>
           </div>
         </div>
+
+
+
+
         <div class="col-lg-6">
           <div class="right-content">
             <div class="row">
@@ -138,7 +145,7 @@
             <div class="owl-women-item owl-carousel">
               <div class="item">
                 <div class="thumb">
-                  <div class="hover-content">
+                                    <!--<div class="hover-content">
                     <ul>
                       <li>
                         <a href="single-product.html"><i class="fa fa-eye"></i></a>
@@ -151,11 +158,12 @@
                       </li>
                     </ul>
                   </div>
+                  -->
                   <img src="{{ zenske_zadnje_slike.0.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
                   <h4>{{ zenske_zadnje_slike.0.ime }}</h4>
-                  <span>{{ zenske_zadnje_slike.0.cijena }}</span>
+                  <span>{{ zenske_zadnje_slike.0.cijena }} €</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -177,7 +185,7 @@
               </div>
               <div class="item">
                 <div class="thumb">
-                  <div class="hover-content">
+                  <!--<div class="hover-content">
                     <ul>
                       <li>
                         <a href="single-product.html"><i class="fa fa-eye"></i></a>
@@ -190,11 +198,12 @@
                       </li>
                     </ul>
                   </div>
+                  -->
                    <img src="{{ zenske_zadnje_slike.1.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
                   <h4>{{ zenske_zadnje_slike.1.ime }}</h4>
-                  <span>{{ zenske_zadnje_slike.1.cijena }}</span>
+                  <span>{{ zenske_zadnje_slike.1.cijena }} €</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -216,7 +225,7 @@
               </div>
               <div class="item">
                 <div class="thumb">
-                  <div class="hover-content">
+                                    <!--<div class="hover-content">
                     <ul>
                       <li>
                         <a href="single-product.html"><i class="fa fa-eye"></i></a>
@@ -229,11 +238,12 @@
                       </li>
                     </ul>
                   </div>
+                  -->
                   <img src="{{ zenske_zadnje_slike.2.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
                   <h4>{{ zenske_zadnje_slike.2.ime }}</h4>
-                  <span>{{ zenske_zadnje_slike.2.cijena }}</span>
+                  <span>{{ zenske_zadnje_slike.2.cijena }} €</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -255,7 +265,7 @@
               </div>
               <div class="item">
                 <div class="thumb">
-                  <div class="hover-content">
+                                    <!--<div class="hover-content">
                     <ul>
                       <li>
                         <a href="single-product.html"><i class="fa fa-eye"></i></a>
@@ -268,11 +278,12 @@
                       </li>
                     </ul>
                   </div>
+                  -->
                   <img src="{{ zenske_zadnje_slike.3.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
                   <h4>{{ zenske_zadnje_slike.3.ime }}</h4>
-                  <span>{{ zenske_zadnje_slike.3.cijena }}</span>
+                  <span>{{ zenske_zadnje_slike.3.cijena }} €</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -319,7 +330,7 @@
             <div class="owl-men-item owl-carousel">
               <div class="item">
                 <div class="thumb">
-                  <div class="hover-content">
+                                    <!--<div class="hover-content">
                     <ul>
                       <li>
                         <a href="single-product.html"><i class="fa fa-eye"></i></a>
@@ -332,11 +343,12 @@
                       </li>
                     </ul>
                   </div>
+                  -->
                   <img src="{{ djecje_zadnje_slike.0.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
                   <h4>{{ djecje_zadnje_slike.0.ime }}</h4>
-                  <span>{{ djecje_zadnje_slike.0.cijena }}</span>
+                  <span>{{ djecje_zadnje_slike.0.cijena }} €</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -358,7 +370,7 @@
               </div>
               <div class="item">
                 <div class="thumb">
-                  <div class="hover-content">
+                                    <!--<div class="hover-content">
                     <ul>
                       <li>
                         <a href="single-product.html"><i class="fa fa-eye"></i></a>
@@ -371,11 +383,12 @@
                       </li>
                     </ul>
                   </div>
+                  -->
                   <img src="{{ djecje_zadnje_slike.1.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
                   <h4>{{ djecje_zadnje_slike.1.ime }}</h4>
-                  <span>{{ djecje_zadnje_slike.1.cijena }}</span>
+                  <span>{{ djecje_zadnje_slike.1.cijena }} €</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -397,7 +410,7 @@
               </div>
               <div class="item">
                 <div class="thumb">
-                  <div class="hover-content">
+                                    <!--<div class="hover-content">
                     <ul>
                       <li>
                         <a href="single-product.html"><i class="fa fa-eye"></i></a>
@@ -410,11 +423,12 @@
                       </li>
                     </ul>
                   </div>
+                  -->
                   <img src="{{ djecje_zadnje_slike.2.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
                   <h4>{{ djecje_zadnje_slike.2.ime }}</h4>
-                  <span>{{ djecje_zadnje_slike.2.cijena }}</span>
+                  <span>{{ djecje_zadnje_slike.2.cijena }} €</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -436,7 +450,7 @@
               </div>
               <div class="item">
                 <div class="thumb">
-                  <div class="hover-content">
+                                    <!--<div class="hover-content">
                     <ul>
                       <li>
                         <a href="single-product.html"><i class="fa fa-eye"></i></a>
@@ -449,11 +463,12 @@
                       </li>
                     </ul>
                   </div>
+                  -->
                   <img src="{{ djecje_zadnje_slike.3.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
                   <h4>{{ djecje_zadnje_slike.3.ime }}</h4>
-                  <span>{{ djecje_zadnje_slike.3.cijena }}</span>
+                  <span>{{ djecje_zadnje_slike.3.cijena }} €</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -498,7 +513,7 @@
             <div class="owl-kid-item owl-carousel">
               <div class="item">
                 <div class="thumb">
-                  <div class="hover-content">
+                                    <!--<div class="hover-content">
                     <ul>
                       <li>
                         <a href="single-product.html"><i class="fa fa-eye"></i></a>
@@ -511,11 +526,12 @@
                       </li>
                     </ul>
                   </div>
+                  -->
                   <img src="{{ produkt_zadnje_slike.0.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
                   <h4>{{ produkt_zadnje_slike.0.ime }}</h4>
-                  <span>{{ produkt_zadnje_slike.0.cijena }}</span>
+                  <span>{{ produkt_zadnje_slike.0.cijena }} €</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -537,7 +553,7 @@
               </div>
               <div class="item">
                 <div class="thumb">
-                  <div class="hover-content">
+                                    <!--<div class="hover-content">
                     <ul>
                       <li>
                         <a href="single-product.html"><i class="fa fa-eye"></i></a>
@@ -550,11 +566,12 @@
                       </li>
                     </ul>
                   </div>
+                  -->
                   <img src="{{ produkt_zadnje_slike.1.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
                   <h4>{{ produkt_zadnje_slike.1.ime }}</h4>
-                  <span>{{ produkt_zadnje_slike.1.cijena }}</span>
+                  <span>{{ produkt_zadnje_slike.1.cijena }} €</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -576,7 +593,7 @@
               </div>
               <div class="item">
                 <div class="thumb">
-                  <div class="hover-content">
+                                    <!--<div class="hover-content">
                     <ul>
                       <li>
                         <a href="single-product.html"><i class="fa fa-eye"></i></a>
@@ -589,11 +606,12 @@
                       </li>
                     </ul>
                   </div>
+                  -->
                   <img src="{{ produkt_zadnje_slike.2.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
                   <h4>{{ produkt_zadnje_slike.2.ime }}</h4>
-                  <span>{{ produkt_zadnje_slike.2.cijena }}</span>
+                  <span>{{ produkt_zadnje_slike.2.cijena }} €</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -615,7 +633,7 @@
               </div>
               <div class="item">
                 <div class="thumb">
-                  <div class="hover-content">
+                                    <!--<div class="hover-content">
                     <ul>
                       <li>
                         <a href="single-product.html"><i class="fa fa-eye"></i></a>
@@ -628,11 +646,12 @@
                       </li>
                     </ul>
                   </div>
+                  -->
                   <img src="{{ produkt_zadnje_slike.3.slika.url }}" alt="" />
                 </div>
                 <div class="down-content">
                   <h4>{{ produkt_zadnje_slike.3.ime }}</h4>
-                  <span>{{ produkt_zadnje_slike.3.cijena }}</span>
+                  <span>{{ produkt_zadnje_slike.3.cijena }} €</span>
                   <ul class="stars">
                     <li>
                       <i class="fa fa-star"></i>
@@ -878,4 +897,33 @@
       </div>
     </div>
   </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  let index = 0;
+  const contents = document.querySelectorAll(".inner-obavijest");
+  const totalToShow = Math.min(3, contents.length); // Ensure we only cycle through 3 or less
+
+  function showNextObavijest() {
+    // Hide current
+    contents.forEach((content, i) => {
+      content.classList.remove("active");
+      if (i === index) {
+        content.classList.add("active");
+      }
+    });
+
+    // Increment index and loop within range of 3
+    index = (index + 1) % totalToShow;
+  }
+
+  // Initially show the first item
+  showNextObavijest();
+
+  // Change every 5 seconds
+  setInterval(showNextObavijest, 5000);
+});
+
+</script>
+
 {% endblock %}

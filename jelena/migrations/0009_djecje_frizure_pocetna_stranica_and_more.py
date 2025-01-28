@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='zenske_frizure',
+            model_name='frizure',
             name='pocetna_stranica',
             field=models.BooleanField(default=False),
         ),

@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             new_name='Zenske_frizure',
         ),
         migrations.AlterModelOptions(
-            name='zenske_frizure',
+            name='frizure',
             options={'verbose_name_plural': 'Zenske Frizure'},
         ),
     ]
