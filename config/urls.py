@@ -23,6 +23,7 @@ urlpatterns = [
     #Index
     path("", views.naslovnica, name="naslovnica"),
     path("obavijest/<int:obavijest_id>", views.obavijest, name="obavijest"),
+    path("send_email/", views.send_email, name="send_email"),
 
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(

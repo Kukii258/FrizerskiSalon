@@ -1425,6 +1425,7 @@ Subscribe
   margin-top: 90px;
 }
 
+
 .subscribe .section-heading {
   margin-bottom: 30px;
 }
@@ -1433,7 +1434,7 @@ Subscribe
   line-height: 55px;
 }
 
-.subscribe form input {
+.subscribe form input, .subscribe form input {
   width: 100%;
   height: 44px;
   line-height: 44px;
@@ -1445,6 +1446,7 @@ Subscribe
   border-radius: 0px;
   border: 1px solid #7a7a7a;
   box-shadow: none;
+  margin-top: 10px;
 }
 
 .subscribe form input::focus {

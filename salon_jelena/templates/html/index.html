@@ -825,37 +825,88 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
-          <div class="section-heading">
-            <h2>Naruči Se Putem E-Maila</h2>
-            <span>Napiši nam svoje ime, frizuru i datum kada bi se htio naručiti</span>
-          </div>
-          <form id="subscribe" action="" method="get">
-            <div class="row">
-              <div class="col-lg-5">
-                <fieldset>
-                  <input name="name" type="text" id="name" placeholder="Tvoje Ime" required="" />
-                </fieldset>
-              </div>
-              <div class="col-lg-5">
-                <fieldset>
-                  <input name="email"
-                         type="text"
-                         id="email"
-                         pattern="[^ @]*@[^ @]*"
-                         placeholder="Tvoje Email Adresa"
-                         required="" />
-                </fieldset>
-              </div>
-              <div class="col-lg-2">
-                <fieldset>
-                  <button type="submit" id="form-submit" class="main-dark-button">
-                    <i class="fa fa-paper-plane"></i>
-                  </button>
-                </fieldset>
-              </div>
-            </div>
-          </form>
+  <div class="section-heading">
+    <h2>Naruči Se Putem E-Maila</h2>
+          <span>Napiši nam svoje ime, frizuru i datum kada bi se htio naručiti</span>
         </div>
+
+ <form id="subscribe" action="{% url 'send_email' %}" method="post">
+  {% csrf_token %}
+  <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 20px; align-items: start;">
+    <!-- Left Side -->
+    <div>
+      <fieldset>
+        <input
+          name="name"
+          type="text"
+          id="name"
+          placeholder="Tvoje Ime"
+          required
+          style="width: 100%;"
+        />
+      </fieldset>
+      <fieldset>
+        <textarea
+          name="frizura"
+          id="frizura"
+          placeholder="Unesi ime frizure i detalje o frizuri"
+          required
+          rows="4"
+          style="resize: both; width: 100%; margin-top: 10px;"
+        ></textarea>
+      </fieldset>
+    </div>
+
+    <!-- Right Side -->
+    <div>
+      {% if error_message %}
+        <p style="color: red; font-size: 14px;">{{ error_message }}</p>
+      {% endif %}
+      <fieldset>
+        <input
+          name="email"
+          type="email"
+          id="email"
+          placeholder="Tvoja Email Adresa"
+          required
+          style="width: 100%;"
+        />
+      </fieldset>
+      <fieldset>
+        <input
+          name="confirm_email"
+          type="email"
+          id="confirm_email"
+          placeholder="Potvrda Email Adrese"
+          required
+          style="width: 100%;"
+        />
+      </fieldset>
+      <fieldset>
+        <input
+          name="datum"
+          type="date"
+          id="datum"
+          placeholder="Odaberi Datum"
+          required
+          style="width: 100%;"
+        />
+      </fieldset>
+    </div>
+    <!-- Send Button -->
+       <div class="col-lg-2" style="margin-top: 4rem">
+          <fieldset>
+            <button type="submit" id="form-submit" class="main-dark-button">
+              <i class="fa fa-paper-plane"></i>
+            </button>
+          </fieldset>
+        </div>
+      </div>
+</form>
+
+
+    </div>
+
         <div class="col-lg-4">
           <div class="row">
             <div class="col-6">
@@ -925,5 +976,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const errorMessage = document.querySelector(".subscribe .section-heading + form p[style]");
+    if (errorMessage) {
+      const formSection = document.querySelector(".subscribe");
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  });
+</script>
+
 
 {% endblock %}
