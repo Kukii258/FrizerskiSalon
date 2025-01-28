@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='zenske_slike',
             name='video',
-            field=models.FileField(blank=True, null=True, upload_to='zenske_frizure/frizure_video'),
+            field=models.FileField(blank=True, null=True, upload_to='frizure/frizure_video'),
         ),
     ]

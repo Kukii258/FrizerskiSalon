@@ -6,14 +6,14 @@ from .models import Obavijest, Zenske_frizure, Muske_frizure, Djecje_frizure, Pr
 
 def naslovnica(request):
 
-    obavijest = Obavijest.objects.first()
+    obavijesti = Obavijest.objects.all().order_by('-id')[:3]
 
     zenske_zadnje_slike = zadnje_slike(Zenske_frizure)
     djecje_zadnje_slike = zadnje_slike(Djecje_frizure)
     produkt_zadnje_slike = zadnje_slike(Produkti)
 
 
-    context = {'obavijest':obavijest,'zenske_zadnje_slike':zenske_zadnje_slike, 'djecje_zadnje_slike':djecje_zadnje_slike, 'produkt_zadnje_slike':produkt_zadnje_slike}
+    context = {'obavijesti':obavijesti,'zenske_zadnje_slike':zenske_zadnje_slike, 'djecje_zadnje_slike':djecje_zadnje_slike, 'produkt_zadnje_slike':produkt_zadnje_slike}
     return render(request, "html/index.html",context)
 
 

@@ -153,6 +153,8 @@ body {
   display: inline-block;
   font-weight: 500;
   transition: all .3s;
+  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.5);
 }
 
 .main-border-button a:hover {
@@ -663,7 +665,6 @@ banner
 
 .main-banner .left-content .inner-content {
   position: absolute;
-  left: 100px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -2387,3 +2388,22 @@ responsive
 .obavijest{
   margin-top: 50px;
 }
+
+
+
+.inner-obavijest {
+  display: none; /* Initially hide all */
+  background-color: rgba(128, 128, 128, 0.5);
+  width: 100%;
+  padding: 30px;
+}
+
+  .inner-obavijest.active {
+    display: block; /* Show only the active one */
+    animation: fadeIn 1s; /* Add smooth fade-in effect */
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }

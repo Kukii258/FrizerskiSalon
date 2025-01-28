@@ -212,12 +212,15 @@ footer.footer {
     font-size: 1.1rem;
     font-weight: bold;
     color: #555;
+    margin-top: 1rem;
 }
 
 .card-info .card-price {
     font-size: 1.1rem;
     font-weight: bold;
     color: #555; /* Bootstrap danger color for price */
+    margin-top: 1rem;
+
 }
 
 .card-video {
