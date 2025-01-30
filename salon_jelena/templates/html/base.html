@@ -119,85 +119,66 @@ https://templatemo.com/tm-571-hexashop
     <!-- ***** Subscribe Area Ends ***** -->
     <!-- ***** Footer Start ***** -->
     <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="first-item">
-              <div class="logo">
-                <img src="{% static 'images/white-logo.png' %}"
-                     alt="hexashop ecommerce templatemo" />
-              </div>
-              <ul>
-                <li>
-                  <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47661667718262f9:0xeff017b56305ebe4?source=g.page.default">Ul. Ljudevita Vukotinovića 2, 48260, Križevci</a>
-                </li>
-                <li>
-                  <p style="color: white">frizerski.studio.jelena@gmail.com</p>
-                </li>
-                <li>
-                  <p style="color: white">048 682 151</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <h4>Frizure</h4>
-            <ul>
-              <li>
-                <a href="{% url 'zenska_galerija' %}">Ženske Frizure</a>
-              </li>
-              <li>
-                <a href="{% url 'muska_galerija' %}">Muške Frizure</a>
-              </li>
-              <li>
-                <a href="{% url 'djecja_galerija' %}">Dječje Frizure</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-3">
-            <h4>Korisne Stranice</h4>
-            <ul>
-              <li>
-                <a href="{% url 'naslovnica' %}" >Početna Stranica</a>
-              </li>
-              <li>
-                <a href="{% url 'o_nama' %}">O Nama</a>
-              </li>
-              <li>
-                <a href="{% url 'naslovnica'%}#subscribe">Kontaktirajte Nas</a>
-              </li>
-            </ul>
-          </div>
-         <!-- <div class="col-lg-3">
-            <h4>Pomoć i Informacije</h4>
-            <ul>
-              <li>
-                <a href="#">Pomoć</a>
-              </li>
-              <li>
-                <a href="#">Često Postavljena Pitanja</a>
-              </li>
-            </ul>
-          </div>-->
-          <div class="col-lg-12">
-            <div class="under-footer">
-              <p>
-                Copyright © 2025 Frizerski Salon Jelena Co., Ltd. Sva prava zadržana.
-                <br />
-              </p>
-              <ul>
-                <li>
-                  <a href="https://www.facebook.com/frizerski.studio.jelena/?locale=hr_HR"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/jelenafrizerskisalon/"><i class="fa fa-instagram"></i></a>
-                </li>
-              </ul>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 footer_slika">
+        <div class="first-item">
+          <div class="logo">
+            <img class="slika" src="{% static 'images/white-logo.png' %}" />
           </div>
         </div>
       </div>
-    </footer>
+      <div class="col-lg-4 footer_links">
+        <ul>
+          <li>
+            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47661667718262f9:0xeff017b56305ebe4?source=g.page.default">Ul. Ljudevita Vukotinovića 2, 48260, Križevci</a>
+          </li>
+          <li>
+            <a href="mailto:frizerski.studio.jelena@gmail.com" style="color: white;">frizerski.studio.jelena@gmail.com</a>
+          </li>
+          <li>
+            <a href="tel:+048682151" style="color: white;">048 682 151</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-2">
+        <h4>Frizure</h4>
+        <ul>
+          <li><a href="{% url 'zenska_galerija' %}">Ženske Frizure</a></li>
+          <li><a href="{% url 'muska_galerija' %}">Muške Frizure</a></li>
+          <li><a href="{% url 'djecja_galerija' %}">Dječje Frizure</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2">
+        <h4>Korisne Stranice</h4>
+        <ul>
+          <li><a href="{% url 'naslovnica' %}">Početna Stranica</a></li>
+          <li><a href="{% url 'o_nama' %}">O Nama</a></li>
+          <li><a href="{% url 'naslovnica'%}#subscribe">Kontaktirajte Nas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="under-footer">
+          <p>
+            Copyright © 2025 Frizerski Salon Jelena Co., Ltd. Sva prava zadržana.
+            <br />
+          </p>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/frizerski.studio.jelena/?locale=hr_HR"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/jelenafrizerskisalon/"><i class="fa fa-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
     <!-- jQuery -->
     <script src="{% static 'js/jquery-2.1.0.min.js'%}"></script>
     <!-- Bootstrap -->

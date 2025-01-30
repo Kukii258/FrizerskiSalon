@@ -71,7 +71,7 @@
                         <h4>Muškarci</h4>
                         <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
                         <div class="main-border-button">
-                          <a href="{% url 'muska_galerija' %}">Saznaj više</a>
+                          <a href="{% url 'muska_galerija' %}">Saznaj Više</a>
                         </div>
                       </div>
                     </div>
@@ -91,7 +91,7 @@
                         <h4>Djeca</h4>
                         <!--<p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>-->
                         <div class="main-border-button">
-                          <a href="{% url 'djecja_galerija' %}">Saznaj više </a>
+                          <a href="{% url 'djecja_galerija' %}">Saznaj Više</a>
                         </div>
                       </div>
                     </div>
@@ -907,7 +907,7 @@
 </fieldset>
     </div>
     <!-- Send Button -->
-       <div class="col-lg-2" style="margin-top: 4rem">
+       <div class="col-lg-2" >
           <fieldset>
             <button type="submit" id="form-submit" class="main-dark-button">
               <i class="fa fa-paper-plane"></i>
@@ -916,6 +916,38 @@
         </div>
       </div>
 </form>
+
+<!-- Modal -->
+<div id="emailModal1" class="modal1">
+  <div class="modal-content1">
+    <span class="close-btn1">&times;</span>
+    <h2>Uspješno ste se naručili</h2>
+    <p>Hvala što ste odabrali naš salon! Kontaktirat ćemo vas uskoro kako bismo potvrdili termin.</p>
+  </div>
+</div>
+{% if email_sent %}
+  <script>
+    window.onload = function() {
+      var modal = document.getElementById("emailModal1");
+      var closeBtn = document.getElementsByClassName("close-btn1")[0];
+
+      // Show the modal
+      modal.style.display = "block";
+
+      // Close the modal when the user clicks the close button
+      closeBtn.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // Close the modal when the user clicks anywhere outside the modal
+      window.onclick = function(event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      }
+    }
+  </script>
+{% endif %}
 
 
 

@@ -44,13 +44,13 @@ def galerija(request, model, template_name):
     context = {'slike': slike}
     return render(request, template_name, context)
 
-
-
-
+from django.shortcuts import render, redirect
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from datetime import datetime
 
 def send_email(request):
-
-
     name = request.POST.get("name", "")
     email = request.POST.get("email", "")
     potvrda_email = request.POST.get("potvrda_email", "")
@@ -75,6 +75,7 @@ def send_email(request):
                 "frizura": frizura,
                 "datum": datum,
                 "broj_mobitela": broj_mobitela,
+                "email_sent": False,  # No email sent
             },
         )
 
@@ -139,11 +140,30 @@ def send_email(request):
             server.sendmail(sender_email, salon_email, salon_message.as_string())
 
         print("Emails sent successfully!")
+        # Return with a flag indicating success
+        return render(
+            request,
+            "html/index.html",
+            {
+                "email_sent": True,  # Email sent successfully
+            },
+        )
     except Exception as e:
         print(f"Error: {e}")
+        return render(
+            request,
+            "html/index.html",
+            {
+                "error_message": "Došlo je do pogreške prilikom slanja emaila.",
+                "name": name,
+                "email": email,
+                "frizura": frizura,
+                "datum": datum,
+                "broj_mobitela": broj_mobitela,
+                "email_sent": False,  # No email sent
+            },
+        )
 
-    # Redirect to naslovnica after sending the emails
-    return redirect("naslovnica")
 
 
 def o_nama(request):
