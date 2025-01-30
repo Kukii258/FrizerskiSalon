@@ -118,17 +118,17 @@ https://templatemo.com/tm-571-hexashop
     </div>
     <!-- ***** Subscribe Area Ends ***** -->
     <!-- ***** Footer Start ***** -->
-    <footer>
+   <footer>
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 footer_slika">
+      <div class="col-lg-2 footer_slika">
         <div class="first-item">
           <div class="logo">
             <img class="slika" src="{% static 'images/white-logo.png' %}" />
           </div>
         </div>
       </div>
-      <div class="col-lg-4 footer_links">
+      <div class="col-lg-2 footer_links">
         <ul>
           <li>
             <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47661667718262f9:0xeff017b56305ebe4?source=g.page.default">Ul. Ljudevita Vukotinovića 2, 48260, Križevci</a>
@@ -142,6 +142,16 @@ https://templatemo.com/tm-571-hexashop
         </ul>
       </div>
       <div class="col-lg-2">
+        <h4>Radno vrijeme</h4>
+        <ul>
+          <li>
+            <span style="color: white">07:00 - 19:00 Pon-Pet</span>
+            <br>
+            <span style="color: white">07:00 - 15:00 Sub</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-2">
         <h4>Frizure</h4>
         <ul>
           <li><a href="{% url 'zenska_galerija' %}">Ženske Frizure</a></li>
@@ -149,7 +159,7 @@ https://templatemo.com/tm-571-hexashop
           <li><a href="{% url 'djecja_galerija' %}">Dječje Frizure</a></li>
         </ul>
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-2 korisne_stranice">
         <h4>Korisne Stranice</h4>
         <ul>
           <li><a href="{% url 'naslovnica' %}">Početna Stranica</a></li>
@@ -178,6 +188,8 @@ https://templatemo.com/tm-571-hexashop
     </div>
   </div>
 </footer>
+
+
 
     <!-- jQuery -->
     <script src="{% static 'js/jquery-2.1.0.min.js'%}"></script>

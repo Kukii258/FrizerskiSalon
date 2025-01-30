@@ -824,98 +824,96 @@
   <div class="subscribe">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8">
-  <div class="section-heading">
-    <h2>Naruči Se Putem E-Maila</h2>
-          <span>Napiši nam svoje ime, frizuru i datum kada bi se htio naručiti</span>
-        </div>
-
-<form id="subscribe" action="{% url 'send_email' %}" method="post">
-  {% csrf_token %}
-  <div class="subscribe-container">
-    <!-- Left Side -->
-    <div>
-      <fieldset>
-        <input
-          name="name"
-          type="text"
-          id="name"
-          placeholder="Tvoje Ime"
-          value="{{ name|default_if_none:'' }}"
-          required
-          style="width: 100%;"
-        />
-      </fieldset>
-      <fieldset>
-        <input
-          name="broj_mobitela"
-          type="text"
-          id="broj_mobitela"
-          placeholder="Broj Mobitela"
-          value="{{ broj_mobitela|default_if_none:'' }}"
-          required
-          style="width: 100%;"
-        />
-      </fieldset>
-      <fieldset>
-        <textarea
-          name="frizura"
-          id="frizura"
-          placeholder="Unesi ime frizure i detalje o frizuri"
-          required
-          rows="4"
-          style="resize: both; width: 100%; margin-top: 10px;"
-        >{{ frizura|default_if_none:'' }}</textarea>
-      </fieldset>
-    </div>
-
-    <!-- Right Side -->
-    <div>
-      {% if error_message %}
-        <p style="color: red; font-size: 14px;">{{ error_message }}</p>
-      {% endif %}
-      <fieldset>
-        <input
-          name="email"
-          type="email"
-          id="email"
-          placeholder="Tvoja Email Adresa"
-          value="{{ email|default_if_none:'' }}"
-          required
-          style="width: 100%;"
-        />
-      </fieldset>
-      <fieldset>
-        <input
-          name="potvrda_email"
-          type="email"
-          id="potvrda_email"
-          placeholder="Potvrda Email Adrese"
-          required
-          style="width: 100%;"
-        />
-      </fieldset>
-<fieldset>
-  <input
-    name="datum"
-    type="text"
-    id="datum"
-    value="Odaberi Datum"
-    required
-    style="width: 100%; color: gray;"
-  />
-</fieldset>
-    </div>
-    <!-- Send Button -->
-       <div class="col-lg-2" >
-          <fieldset>
-            <button type="submit" id="form-submit" class="main-dark-button">
-              <i class="fa fa-paper-plane"></i>
-            </button>
-          </fieldset>
-        </div>
-      </div>
-</form>
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Naruči Se Putem E-Maila</h2>
+            <span>Napiši nam svoje ime, frizuru i datum kada bi se htio naručiti</span>
+          </div>
+            <form id="subscribe" action="{% url 'send_email' %}" method="post">
+              {% csrf_token %}
+              <div class="subscribe-container">
+                <!-- Left Side -->
+                <div>
+                  <fieldset>
+                    <input
+                      name="name"
+                      type="text"
+                      id="name"
+                      placeholder="Tvoje Ime"
+                      value="{{ name|default_if_none:'' }}"
+                      required
+                      style="width: 100%;"
+                    />
+                  </fieldset>
+                  <fieldset>
+                    <input
+                      name="broj_mobitela"
+                      type="text"
+                      id="broj_mobitela"
+                      placeholder="Broj Mobitela"
+                      value="{{ broj_mobitela|default_if_none:'' }}"
+                      required
+                      style="width: 100%;"
+                    />
+                  </fieldset>
+                  <fieldset>
+                    <textarea
+                      name="frizura"
+                      id="frizura"
+                      placeholder="Unesi ime frizure i detalje o frizuri"
+                      required
+                      rows="4"
+                      style="resize: both; width: 100%; margin-top: 10px;"
+                    >{{ frizura|default_if_none:'' }}</textarea>
+                  </fieldset>
+                </div>
+                <!-- Right Side -->
+                <div>
+                  {% if error_message %}
+                    <p style="color: red; font-size: 14px;">{{ error_message }}</p>
+                  {% endif %}
+                  <fieldset>
+                    <input
+                      name="email"
+                      type="email"
+                      id="email"
+                      placeholder="Tvoja Email Adresa"
+                      value="{{ email|default_if_none:'' }}"
+                      required
+                      style="width: 100%;"
+                    />
+                  </fieldset>
+                  <fieldset>
+                    <input
+                      name="potvrda_email"
+                      type="email"
+                      id="potvrda_email"
+                      placeholder="Potvrda Email Adrese"
+                      required
+                      style="width: 100%;"
+                    />
+                  </fieldset>
+                  <fieldset>
+                    <input
+                      name="datum"
+                      type="text"
+                      id="datum"
+                      value="Odaberi Datum"
+                      required
+                      style="width: 100%; color: gray;"
+                    />
+                  </fieldset>
+                </div>
+                <!-- Send Button -->
+                <div class="col-lg-2" >
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="main-dark-button">
+                      <i class="fa fa-paper-plane"></i>
+                    </button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
 
 <!-- Modal -->
 <div id="emailModal1" class="modal1">
@@ -948,49 +946,6 @@
     }
   </script>
 {% endif %}
-
-
-
-
-    </div>
-
-        <div class="col-lg-4">
-          <div class="row">
-            <div class="col-6">
-              <ul>
-                <li>
-                  Lokacija Salona:
-                  <br />
-                  <span>Ul. Ljudevita Vukotinovića 2, 48260, Križevci</span>
-                </li>
-                <li>
-                  Telefon:
-                  <br />
-                  <span>048 682 151</span>
-                </li>
-              </ul>
-            </div>
-            <div class="col-6">
-              <ul>
-                <li>
-                  Radno vrijeme:
-                  <br />
-                  <span>07:00 - 19:00 Pon - Pet</span>
-                  <span>07:00 - 15:00 Sub</span>
-                </li>
-                <li>
-                  Email:
-                  <br />
-                  <span>frizerski.studio.jelena@gmail.com</span>
-                </li>
-                <li>
-                  Social Media:
-                  <br />
-                  <span><a href="https://www.facebook.com/frizerski.studio.jelena/?locale=hr_HR">Facebook</a>, <a href="https://www.instagram.com/jelenafrizerskisalon/">Instagram</a></span>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     </div>

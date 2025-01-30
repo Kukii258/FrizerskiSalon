@@ -2421,6 +2421,8 @@ responsive
   margin-top: 4rem;
 }
 
+
+
 @media (max-width: 768px) {
   #subscribe > div {
     display: flex;
@@ -2510,5 +2512,31 @@ responsive
 }
 
 .footer_slika{
-  margin-right: -100px;
+  margin-right: -50px;
+}
+
+
+footer .row {
+  display: flex;
+  justify-content: space-between; /* Ensures equal space between columns */
+  align-items: center; /* Aligns items to the top */
+}
+
+footer .col-lg-2 {
+  padding: 0 10px; /* Adds horizontal padding inside each column */
+}
+
+.footer_links{
+  margin-right: 50px;
+}
+
+.korisne_stranice{
+  margin-left: -80px;
+}
+
+#subscribe {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative; /* Ensure the container is a reference for absolute positioning */
 }
