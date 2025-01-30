@@ -144,3 +144,7 @@ def send_email(request):
 
     # Redirect to naslovnica after sending the emails
     return redirect("naslovnica")
+
+
+def o_nama(request):
+    return render(request, "html/about.html")

@@ -17,7 +17,7 @@
             <div class="thumb" style="position: relative;">
               {% for obavijest in obavijesti %} <!-- Limit to 3 obavijesti -->
                 <div class="inner-content inner-obavijest" id="obavijest-{{ forloop.counter }}">
-                  <h4 style="right: 10px">{{ obavijest.naslov }}</h4>
+                  <h4 style="right: 10px; z-index: 1">{{ obavijest.naslov }}</h4>
                   <span>{{ obavijest.pod_naslov }}</span>
                   <div class="main-border-button">
                     {% if obavijest.url %}
@@ -753,7 +753,7 @@
         <div class="col-2">
           <div class="thumb">
             <div class="icon">
-              <a href="http://instagram.com">
+              <a href="https://www.instagram.com/jelenafrizerskisalon/">
                 <h6>Products</h6>
                 <i class="fa fa-instagram"></i>
               </a>
@@ -764,9 +764,9 @@
         <div class="col-2">
           <div class="thumb">
             <div class="icon">
-              <a href="http://instagram.com">
-                <h6>Makeup</h6>
-                <i class="fa fa-instagram"></i>
+              <a href="https://www.facebook.com/frizerski.studio.jelena/?locale=hr_HR">
+                <h6>Aesthetic</h6>
+                <i class="fa fa-facebook"></i>
               </a>
             </div>
             <img src="{% static 'images/insta2.jpg' %}" alt="" />
@@ -775,7 +775,7 @@
         <div class="col-2">
           <div class="thumb">
             <div class="icon">
-              <a href="http://instagram.com">
+              <a href="https://www.instagram.com/jelenafrizerskisalon/">
                 <h6>Brand</h6>
                 <i class="fa fa-instagram"></i>
               </a>
@@ -786,9 +786,9 @@
         <div class="col-2">
           <div class="thumb">
             <div class="icon">
-              <a href="http://instagram.com">
-                <h6>New</h6>
-                <i class="fa fa-instagram"></i>
+              <a href="https://www.facebook.com/frizerski.studio.jelena/?locale=hr_HR">
+                <h6>Aesthetic</h6>
+                <i class="fa fa-facebook"></i>
               </a>
             </div>
             <img src="{% static 'images/insta4.jpg' %}" alt="" />
@@ -797,7 +797,7 @@
         <div class="col-2">
           <div class="thumb">
             <div class="icon">
-              <a href="http://instagram.com">
+              <a href="https://www.instagram.com/jelenafrizerskisalon/">
                 <h6>Fashion</h6>
                 <i class="fa fa-instagram"></i>
               </a>
@@ -808,9 +808,9 @@
         <div class="col-2">
           <div class="thumb">
             <div class="icon">
-              <a href="http://instagram.com">
+              <a href="https://www.facebook.com/frizerski.studio.jelena/?locale=hr_HR">
                 <h6>Aesthetic</h6>
-                <i class="fa fa-instagram"></i>
+                <i class="fa fa-facebook"></i>
               </a>
             </div>
             <img src="{% static 'images/insta6.jpg' %}" alt="" />
@@ -832,7 +832,7 @@
 
 <form id="subscribe" action="{% url 'send_email' %}" method="post">
   {% csrf_token %}
-  <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 20px; align-items: start;">
+  <div class="subscribe-container">
     <!-- Left Side -->
     <div>
       <fieldset>
@@ -895,20 +895,17 @@
           style="width: 100%;"
         />
       </fieldset>
-      <fieldset>
-        <input
-          name="datum"
-          type="date"
-          id="datum"
-          placeholder="Odaberi Datum"
-          value="{{ datum|default_if_none:'' }}"
-          required
-          style="width: 100%;"
-        />
-      </fieldset>
-
+<fieldset>
+  <input
+    name="datum"
+    type="text"
+    id="datum"
+    value="Odaberi Datum"
+    required
+    style="width: 100%; color: gray;"
+  />
+</fieldset>
     </div>
-
     <!-- Send Button -->
        <div class="col-lg-2" style="margin-top: 4rem">
           <fieldset>
@@ -966,6 +963,42 @@
       </div>
     </div>
   </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var datumInput = document.getElementById("datum");
+
+    // Ensure placeholder appears on page load if no value is set
+    if (!datumInput.value || datumInput.value.trim() === "") {
+      datumInput.value = "Odaberi Datum";
+      datumInput.style.color = "gray";
+    }
+
+    // Handle focus (switch to date picker and open calendar immediately)
+    datumInput.addEventListener("focus", function () {
+      if (this.value === "Odaberi Datum") {
+        this.value = "";
+        this.type = "date";
+        this.style.color = "black";
+
+        // Trigger the calendar popup automatically
+        setTimeout(() => {
+          this.showPicker(); // This ensures the date picker opens immediately on focus
+        }, 0);
+      }
+    });
+
+    // Handle blur (restore placeholder if empty)
+    datumInput.addEventListener("blur", function () {
+      if (!this.value) {
+        this.type = "text";
+        this.value = "Odaberi Datum";
+        this.style.color = "gray";
+      }
+    });
+  });
+</script>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
