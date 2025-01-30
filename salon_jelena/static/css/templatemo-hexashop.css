@@ -1918,7 +1918,7 @@ About Us Page
 .about-page-heading {
   margin-top: 160px;
   margin-bottom: 30px;
-  background-image: url(../images/about-us-page-heading.jpg);
+  background-image: url(../images/usluge_banner.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2391,21 +2391,65 @@ responsive
   margin-top: 50px;
 }
 
-
-
 .inner-obavijest {
-  display: none; /* Initially hide all */
-  background-color: rgba(128, 128, 128, 0.5);
-  width: 100%;
-  padding: 30px;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    padding: 30px;
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+    transition: opacity 1s ease-in-out; /* Smooth fade effect */
 }
 
-  .inner-obavijest.active {
-    display: block; /* Show only the active one */
-    animation: fadeIn 1s; /* Add smooth fade-in effect */
+.inner-obavijest.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.inner-obavijest h4,
+.inner-obavijest span{
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.inner-obavijest.active h4,
+.inner-obavijest.active span{
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+  #subscribe > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  #subscribe > div > div {
+    width: 100%;
   }
+
+  #subscribe fieldset {
+    width: 100%;
+  }
+
+  #subscribe button {
+    width: 100%;
+  }
+}
+.subscribe-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .subscribe-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subscribe-container > div {
+    width: 100%;
+  }
+}

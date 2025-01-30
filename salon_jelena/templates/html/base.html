@@ -72,13 +72,13 @@ https://templatemo.com/tm-571-hexashop
                   <a href="javascript:;">Stranice</a>
                   <ul>
                     <li>
-                      <a href="about.html">O nama</a>
+                      <a href="{% url 'o_nama' %}">O nama</a>
                     </li>
                     <!--<li>
                       <a href="single-product.html">Single Product</a>
                     </li>-->
                     <li>
-                      <a href="contact.html">Kontaktirajte nas</a>
+                      <a href="{% url 'naslovnica' %}#subscribe">Kontaktirajte nas</a>
                     </li>
                   </ul>
                 </li>
@@ -144,13 +144,13 @@ https://templatemo.com/tm-571-hexashop
             <h4>Frizure</h4>
             <ul>
               <li>
-                <a href="#">Mušte Frizure</a>
+                <a href="{% url 'zenska_galerija' %}">Ženske Frizure</a>
               </li>
               <li>
-                <a href="#">Ženske Frizure</a>
+                <a href="{% url 'muska_galerija' %}">Muške Frizure</a>
               </li>
               <li>
-                <a href="#">Dječje Frizure</a>
+                <a href="{% url 'djecja_galerija' %}">Dječje Frizure</a>
               </li>
             </ul>
           </div>
@@ -158,17 +158,17 @@ https://templatemo.com/tm-571-hexashop
             <h4>Korisne Stranice</h4>
             <ul>
               <li>
-                <a href="#">Početna Stranica</a>
+                <a href="{% url 'naslovnica' %}" >Početna Stranica</a>
               </li>
               <li>
-                <a href="#">O Nama</a>
+                <a href="{% url 'o_nama' %}">O Nama</a>
               </li>
               <li>
-                <a href="#">Kontaktirajte Nas</a>
+                <a href="{% url 'naslovnica'%}#subscribe">Kontaktirajte Nas</a>
               </li>
             </ul>
           </div>
-          <div class="col-lg-3">
+         <!-- <div class="col-lg-3">
             <h4>Pomoć i Informacije</h4>
             <ul>
               <li>
@@ -178,7 +178,7 @@ https://templatemo.com/tm-571-hexashop
                 <a href="#">Često Postavljena Pitanja</a>
               </li>
             </ul>
-          </div>
+          </div>-->
           <div class="col-lg-12">
             <div class="under-footer">
               <p>
