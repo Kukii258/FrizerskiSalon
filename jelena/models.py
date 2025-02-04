@@ -41,10 +41,11 @@ class Glavna_Frizura(models.Model):
             raise ValidationError("Moraš uplodat-i sliku ili video.")
 
         if self.pocetna_stranica and (not self.ime or not self.cijena):
+            self.slika = self.slika
             raise ValidationError("Za sliku koja ide na početnu stranicu morate upisati ime i cijenu.")
 
-
-
+        if self.pocetna_stranica and self.video:
+            raise ValidationError("Ne možes uplodat-i video na početnu stranicu.")
 
     def __str__(self):
         if self.ime:
@@ -52,8 +53,6 @@ class Glavna_Frizura(models.Model):
         else:
             ime_slike = os.path.splitext(os.path.basename(self.slika.name))[0]  # Extracts 'zenska4'
             return f"{ime_slike} - {self.datum_uploada.strftime('%d. %m. %Y')}"
-
-
 
 
 class Zenske_frizure(Glavna_Frizura):
