@@ -18,8 +18,8 @@ class Obavijest(models.Model):
         verbose_name_plural = "Obavijesti"
 
 class Glavna_Frizura(models.Model):
-    ime = models.CharField(max_length=100, null=False, blank=False)
-    cijena = models.IntegerField(null=False, blank=False)
+    ime = models.CharField(max_length=100, null=True, blank=True)
+    cijena = models.IntegerField(null=True, blank=True)
     opis = models.CharField(null=False, blank=True)
     slika = models.ImageField(upload_to='frizure', null=True, blank=True)
     video = models.FileField(upload_to='frizure_video', null=True, blank=True)
@@ -36,7 +36,8 @@ class Glavna_Frizura(models.Model):
             raise ValidationError("Moraš uplodat-i sliku ili video.")
 
     def __str__(self):
-        return self.ime
+        return date
+
 
 class Zenske_frizure(Glavna_Frizura):
     class Meta:
