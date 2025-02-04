@@ -1,8 +1,6 @@
 {% extends "html/base.html" %}
-
 {% load static i18n %}
-
-{% block title %}Naslovnica - Frizerski Salon Jelena{% endblock %}
+{% block title %}Ženska Galerija - Frizerski Salon Jelena{% endblock %}
 {% block content %}
 
 <!DOCTYPE html>
@@ -12,65 +10,163 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home - Pintereso Bootstrap Template</title>
-    <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
     <link rel="stylesheet" href="{% static 'css/app.css' %}">
     <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 10%;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+        }
+        .modal-content img, .modal-content video {
+            background: none;
+            border: none; /* Removes any border */
+            outline: none; /* Removes focus outline */
+        }
+        .modal-prev:focus, .modal-next:focus {
+          outline: none; /* Removes focus outline */
+          border: none; /* Ensures no border appears */
+}
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .modal-prev, .modal-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            color: grey;
+            border: none;
+            font-size: 36px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1000;
+            transition: color 0.3s ease;
+            user-select: none;
+            outline: none;
+        }
+        .modal-prev {
+            left: 20px;
+        }
+        .modal-next {
+            right: 20px;
+        }
+        .modal-prev:hover, .modal-next:hover {
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
-
-
     <h1 class="font-weight-bold title" style="margin-top: 80px;">Galerija Produkta</h1>
 
     <section class="mt-4 mb-5">
-    <div class="container mb-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card-columns">
+                    {% for slika in slike|dictsortreversed:"id" %}
+                        <div class="card card-pin" onclick="openModal({{ forloop.counter0 }})">
+                            {% if slika.slika %}
+                                <img class="card-img" src="{{ slika.slika.url }}" alt="{{ slika.ime }}">
+                            {% elif slika.video %}
+                                <div class="card-video-wrapper">
+                                    <video class="card-video">
+                                        <source src="{{ slika.video.url }}" type="video/mp4">
+                                    </video>
+                                    <div class="play-button"></div>
+                                </div>
+                            {% endif %}
 
-    </div>
-    <div class="container-fluid">
-    	<div class="row">
-    		<div class="card-columns">
-
-          {% for slika in slike %}
-    			<div class="card card-pin">
-    				{% if slika.slika %}
-              <img class="card-img" src="{{ slika.slika.url }}" alt="{{ slika.ime }}">
-            {% elif slika.video %}
-              <video class="card-video" controls>
-                  <source src="{{ slika.video.url }}" type="video/mp4">
-                  Your browser does not support the video tag.
-              </video>
-            {% endif %}
-            <div class="card-info">
-              <span class="card-name">{{ slika.ime }}</span>
-              <span class="card-price">{{ slika.cijena }}e</span>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-          <div class="card-opis">
-              <span class="card-name">{{ slika.opis }}</span>
-            </div>
-
-    			</div>
-          {% endfor %}
-    		</div>
-    	</div>
-    </div>
-
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <button class="modal-prev" id="modalPrev">&lt;</button>
-        <img class="modal-content" id="modalImg">
-        <button class="modal-next" id="modalNext">&gt;</button>
-        <div id="caption"></div>
-    </div>
-
-
+        </div>
     </section>
 
-    </main>
+    <div id="mediaModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <button class="modal-prev" onclick="changeMedia(-1)">&#10094;</button>
+        <button class="modal-next" onclick="changeMedia(1)">&#10095;</button>
+        <div class="modal-content" id="modalContent"></div>
+    </div>
 
-    <script src="{% static 'js/app.js'%}"></script>
-    <script src="{% static 'js/theme.js' %}"></script>
+    <script>
+        let mediaList = [];
+        let currentIndex = 0;
 
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".card-pin").forEach((card, index) => {
+                const media = card.querySelector("img, video");
+                if (media) {
+                    mediaList.push(media.outerHTML);
+                }
+            });
+        });
+
+        function openModal(index) {
+            currentIndex = index;
+            document.getElementById("modalContent").innerHTML = mediaList[index];
+            document.getElementById("mediaModal").style.display = "flex";
+            const videoElement = document.querySelector("#mediaModal video");
+            if (videoElement) {
+                videoElement.controls = true;
+            }
+        }
+
+    const modal = document.getElementById("mediaModal");
+
+    const a = document.querySelector(".modal .close");
+            a.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+        function closeModal() {
+            document.getElementById("mediaModal").style.display = "none";
+        }
+
+        function changeMedia(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = mediaList.length - 1;
+            if (currentIndex >= mediaList.length) currentIndex = 0;
+            document.getElementById("modalContent").innerHTML = mediaList[currentIndex];
+            const videoElement = document.querySelector("#mediaModal video");
+            if (videoElement) {
+                videoElement.controls = true;
+            }
+        }
+
+    </script>
 </body>
 
 </html>
