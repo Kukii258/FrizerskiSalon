@@ -5198,17 +5198,18 @@ input[type="button"].btn-block {
 
 @media (min-width: 576px) {
   /* line 256, node_modules/bootstrap/scss/_card.scss */
-  .card-columns {
-    -webkit-column-count: 5;
-            column-count: 5;
-    -webkit-column-gap: 1.25rem;
-            column-gap: 1.25rem;
-    orphans: 1;
-    widows: 1; }
-    /* line 267, node_modules/bootstrap/scss/_card.scss */
-    .card-columns .card {
-      display: inline-block;
-      width: 100%; } }
+.card-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem; /* Keeps the same spacing */
+}
+
+.card-columns .card {
+    flex: 1 1 calc(20% - 1.25rem); /* Adjusts to fit 5 cards per row */
+    max-width: calc(20% - 1.25rem); /* Ensures max width per card */
+    margin-bottom: 0.75rem;
+}
+
 
 /* line 280, node_modules/bootstrap/scss/_card.scss */
 .accordion .card:not(:first-of-type):not(:last-of-type) {

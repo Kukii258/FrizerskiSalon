@@ -2540,3 +2540,18 @@ footer .col-lg-2 {
   text-align: center;
   position: relative; /* Ensure the container is a reference for absolute positioning */
 }
+
+@media (max-width: 767px) {
+
+  .footer_links{
+    margin: 0;
+  }
+
+  .korisne_stranice{
+    margin: 0;
+  }
+  .footer_slika{
+    margin: 0;
+  }
+
+}
