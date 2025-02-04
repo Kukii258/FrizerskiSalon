@@ -2555,3 +2555,34 @@ footer .col-lg-2 {
   }
 
 }
+.col-2:first-child .fa-facebook{
+  display: none;
+  }
+@media (max-width: 767px) {
+  .images .col-2:not(:first-child) {
+    display: none !important;
+  }
+
+  .images .col-2:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important; /* Override Bootstrap's column sizing */
+  }
+
+  .images .col-2:first-child .thumb {
+    height: 100vh !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .images .col-2:first-child img {
+    width: 100% !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+    display: block;
+  }
+  .col-2:first-child .fa-facebook{
+  display: block !important;
+  }
+}
