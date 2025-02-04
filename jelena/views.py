@@ -1,11 +1,14 @@
 # Create your views here.
+from PIL import Image
+from django.core.files.base import ContentFile
+from io import BytesIO
 from datetime import datetime
 
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 
-from .models import Obavijest, Zenske_frizure, Muske_frizure, Djecje_frizure, Produkti
+from .models import Obavijest, Zenske_frizure, Muske_frizure, Djecje_frizure, Produkti, Glavna_Frizura
 
 import smtplib
 from email.mime.text import MIMEText
@@ -17,8 +20,7 @@ def naslovnica(request):
     if request.method == "POST":
         if request.POST.get("name") != "":
           send_email(request)
-    else:
-        print("nisamusao")
+
 
     obavijesti = Obavijest.objects.all().order_by('-id')[:3]
 
@@ -32,7 +34,35 @@ def naslovnica(request):
 
 
 def zadnje_slike(model):
-    return model.objects.filter(pocetna_stranica=True).exclude(slika="").order_by("-id")[:4]
+    slike = model.objects.filter(pocetna_stranica=True).exclude(slika="").order_by("-id")[:4]
+
+    modified_slike = []
+
+    for slika in slike:
+        slika_obj = model.objects.get(id=slika.id)
+        img = Image.open(slika_obj.slika)
+
+        width, height = img.size
+
+        if width != height:
+            min_dimension = min(width, height)
+
+
+            left = (width - min_dimension) // 2
+            top = (height - min_dimension) // 2
+            right = left + min_dimension
+            bottom = top + min_dimension
+
+            img = img.crop((left, top, right, bottom))
+
+            buffer = BytesIO()
+            img.save(buffer, format="JPEG")
+            slika_obj.slika.save(f"cropped_{slika.id}.jpg", ContentFile(buffer.getvalue()), save=True)
+
+        modified_slike.append(slika_obj)
+
+    return modified_slike
+
 
 def obavijest(request,obavijest_id):
     obavijest = get_object_or_404(Obavijest, pk=obavijest_id)

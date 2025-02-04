@@ -1,3 +1,6 @@
+import os
+from email.policy import default
+from PIL import Image
 from django import forms
 from django.core.exceptions import ValidationError
 from django.db import models
@@ -26,17 +29,31 @@ class Glavna_Frizura(models.Model):
 
     pocetna_stranica = models.BooleanField(null=False, blank=False, default=False)
 
+    datum_uploada = models.DateTimeField(auto_now_add=True,blank=True,null=True)
     class Meta:
         abstract = True
 
     def clean(self):
         if self.slika and self.video:
             raise ValidationError("Ne možete uplodat-i sliku i video. Odaberite jedno.")
+
         if not self.slika and not self.video:
             raise ValidationError("Moraš uplodat-i sliku ili video.")
 
+        if self.pocetna_stranica and (not self.ime or not self.cijena):
+            raise ValidationError("Za sliku koja ide na početnu stranicu morate upisati ime i cijenu.")
+
+
+
+
     def __str__(self):
-        return date
+        if self.ime:
+            return f" {self.ime} - {self.datum_uploada.strftime('%d. %m. %Y')}"
+        else:
+            ime_slike = os.path.splitext(os.path.basename(self.slika.name))[0]  # Extracts 'zenska4'
+            return f"{ime_slike} - {self.datum_uploada.strftime('%d. %m. %Y')}"
+
+
 
 
 class Zenske_frizure(Glavna_Frizura):
@@ -44,6 +61,9 @@ class Zenske_frizure(Glavna_Frizura):
         verbose_name_plural = "Zenske Frizure"
 
 class Muske_frizure(Glavna_Frizura):
+
+    pocetna_stranica = None
+
     class Meta:
         verbose_name_plural = "Muske Frizure"
 
