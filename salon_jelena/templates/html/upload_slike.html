@@ -1,0 +1,15 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+  <p>Select a folder to upload all files inside:</p>
+  <form method="post" enctype="multipart/form-data" action="">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="import_slike" />
+
+    <!-- Folder selection input -->
+    <input type="file" name="file_field" multiple webkitdirectory />
+
+    <!-- Upload button -->
+    <input type="submit" name="upload" value="Upload Folder" />
+  </form>
+{% endblock %}
