@@ -1,0 +1,14 @@
+.brand-link .brand-image {
+    display: none !important;
+}
+.brand-text{
+  margin: 10px;
+}
+
+footer{
+    display: none !important;
+}
+.jazzmin-login-page .text-center{
+    display: none !important;
+
+}
