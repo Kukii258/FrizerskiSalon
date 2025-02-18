@@ -2586,3 +2586,9 @@ footer .col-lg-2 {
   display: block !important;
   }
 }
+
+@media (max-width: 767px) {
+  #obavijest-1 h4 {
+    font-size: 30px;
+  }
+}
