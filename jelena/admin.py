@@ -109,4 +109,42 @@ class ProduktiAdmin(BaseFrizureAdmin):
 class ObavijestAdmin(admin.ModelAdmin):
     pass
 
+from django.contrib.admin import AdminSite
+from django.utils.translation import gettext_lazy as _
 
+
+class CustomAdminSite(AdminSite):
+    def get_app_list(self, request):
+        """
+        Return a sorted list of apps and their models.
+        This method will allow you to control the order of the models in the left sidebar.
+        """
+        app_list = super().get_app_list(request)
+
+        # Custom model order using the model's `_meta.model_name`
+        custom_order = [
+            "obavijest",  # Correct model name for Obavijest
+            "zenske_frizure",  # Correct model name for Zenske_frizure
+            "muske_frizure",  # Correct model name for Muske_frizure
+            "djecje_frizure",  # Correct model name for Djecje_frizure
+            "produkti",  # Correct model name for Produkti
+        ]
+
+        # Sort the app list according to the custom_order
+        for app in app_list:
+            app['models'].sort(key=lambda x: custom_order.index(x['object_name'].lower()) if x[
+                                                                                                 'object_name'].lower() in custom_order else len(
+                custom_order))
+
+        return app_list
+
+
+# Instantiate the custom admin site
+custom_admin_site = CustomAdminSite(name='custom_admin')
+
+# Register your models with the custom admin site
+custom_admin_site.register(Zenske_frizure, Zenske_frizureAdmin)
+custom_admin_site.register(Muske_frizure, Muske_frizureAdmin)
+custom_admin_site.register(Djecje_frizure, Djecje_frizureAdmin)
+custom_admin_site.register(Produkti, ProduktiAdmin)
+custom_admin_site.register(Obavijest, ObavijestAdmin)
