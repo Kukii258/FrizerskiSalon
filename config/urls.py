@@ -12,7 +12,6 @@ from jelena.admin import custom_admin_site
 
 urlpatterns = [
 
-    path('admin/', custom_admin_site.urls),
     #Galerije
     path('zenska-galerija/', views.galerija, {'model': models.Zenske_frizure, 'template_name': 'html/zenska_galerija.html'},
          name='zenska_galerija'),
