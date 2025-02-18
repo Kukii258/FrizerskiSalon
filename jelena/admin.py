@@ -62,3 +62,7 @@ class Djecje_frizureAdmin(admin.ModelAdmin):
 @admin.register(Produkti)
 class ProduktiAdmin(admin.ModelAdmin):
     pass
+
+@admin.register(Obavijest)
+class ObavijestAdmin(admin.ModelAdmin):
+    pass
