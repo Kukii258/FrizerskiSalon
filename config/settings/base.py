@@ -346,6 +346,7 @@ JAZZMIN_SETTINGS = {
     "login_logo": "images/logo.png",
     "site_logo": None,
     "custom_css": "css/custom_jazmin.css",
+    "show_ui_builder": False,
 }
 
 JAZZMIN_UI_TWEAKS = {
