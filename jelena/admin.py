@@ -8,8 +8,7 @@ from django.contrib.admin import helpers
 
 from .models import Obavijest, Zenske_frizure, Muske_frizure, Djecje_frizure, Produkti
 from .forms import FileFieldForm  # Ensure correct form is imported
-
-
+from ..salon_jelena.users.models import User
 
 
 @admin.action(description="Dodaj Mapu Slika")
@@ -148,3 +147,9 @@ custom_admin_site.register(Muske_frizure, Muske_frizureAdmin)
 custom_admin_site.register(Djecje_frizure, Djecje_frizureAdmin)
 custom_admin_site.register(Produkti, ProduktiAdmin)
 custom_admin_site.register(Obavijest, ObavijestAdmin)
+
+
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    # Your user admin configuration here
+    pass
