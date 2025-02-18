@@ -8,7 +8,7 @@ from django.contrib.admin import helpers
 
 from .models import Obavijest, Zenske_frizure, Muske_frizure, Djecje_frizure, Produkti
 from .forms import FileFieldForm  # Ensure correct form is imported
-from ..salon_jelena.users.models import User
+from .users.models import User
 
 
 @admin.action(description="Dodaj Mapu Slika")
