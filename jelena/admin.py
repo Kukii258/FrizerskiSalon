@@ -38,7 +38,7 @@ def import_slike(modeladmin, request, queryset):
 from django.utils.html import format_html
 
 class BaseFrizureAdmin(admin.ModelAdmin):
-    """Base admin configuration for all Frizure models ."""
+    """Base admin configuration for all Frizure models  ."""
 
     actions = [import_slike]
     list_display = ("get_ime_or_filename", "media_display", "datum_uploada")
