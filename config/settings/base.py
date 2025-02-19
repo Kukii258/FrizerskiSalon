@@ -177,11 +177,8 @@ STATICFILES_FINDERS = [
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-root
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# Use a persistent directory outside the project
-MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/var/lib/dokku/data/storage/media/")
-MEDIA_URL = "/media/"
-
-
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = '/media/'
 # TEMPLATES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#templates
