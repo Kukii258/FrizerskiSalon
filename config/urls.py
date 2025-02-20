@@ -7,7 +7,7 @@ from django.urls import path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
 
-from jelena import views, models, admin
+from jelena import views, models
 
 urlpatterns = [
 
