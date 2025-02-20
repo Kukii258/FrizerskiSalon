@@ -177,11 +177,13 @@ STATICFILES_FINDERS = [
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-root
 import os
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# MEDIA CONFIGURATION
+MEDIA_URL = "/media/"  # URL prefix for media files
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join('salon_jelena', 'media')
+# Set MEDIA_ROOT to the Dokku storage mount path
+MEDIA_ROOT = "/var/lib/dokku/data/storage/my-django-app-media"
+
 
 # TEMPLATES
 # ------------------------------------------------------------------------------
