@@ -182,7 +182,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_URL = "/media/"  # URL prefix for media files
 
 # Set MEDIA_ROOT to the Dokku storage mount path
-MEDIA_ROOT = "/var/lib/dokku/data/storage/my-django-app-media"
+MEDIA_ROOT = "/jelena_salon","/media"
 
 
 # TEMPLATES
