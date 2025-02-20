@@ -8,7 +8,6 @@ __pycache__/
 *.so
 
 
-/salon_jelena/media/
 
 
 # Distribution / packaging
@@ -336,3 +335,6 @@ salon_jelena/media/
 .env
 .envs/*
 !.envs/.local/
+
+
+
