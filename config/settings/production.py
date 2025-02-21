@@ -120,4 +120,8 @@ LOGGING = {
 
 # STATIC FILE COLLECTION
 # ------------------------------------------------------------------------------
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 DISABLE_COLLECTSTATIC = env.bool("DISABLE_COLLECTSTATIC", default=False)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
