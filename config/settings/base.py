@@ -176,11 +176,8 @@ STATICFILES_FINDERS = [
 # MEDIA
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-import os
-
 MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/app/media")
 MEDIA_URL = "/media/"
-
 
 
 # TEMPLATES
@@ -231,8 +228,6 @@ SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_HTTPONLY = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#x-frame-options
 X_FRAME_OPTIONS = "DENY"
-
-SECURE_SSL_REDIRECT = True
 
 # EMAIL
 # ------------------------------------------------------------------------------
