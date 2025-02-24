@@ -47,6 +47,10 @@ SECURE_HSTS_SECONDS = 60
 SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool("DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS", default=True)
 SECURE_HSTS_PRELOAD = env.bool("DJANGO_SECURE_HSTS_PRELOAD", default=True)
 SECURE_CONTENT_TYPE_NOSNIFF = env.bool("DJANGO_SECURE_CONTENT_TYPE_NOSNIFF", default=True)
+CSRF_TRUSTED_ORIGINS = ['http://95.111.252.129']
+
+# This is only for testing! Remove it once HTTPS is enabled
+MIDDLEWARE.remove('django.middleware.csrf.CsrfViewMiddleware')
 
 
 # STATIC & MEDIA
