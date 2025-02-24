@@ -39,18 +39,24 @@ CACHES = {
 # ------------------------------------------------------------------------------
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=False)
-SESSION_COOKIE_SECURE = False #treba biti true
 SESSION_COOKIE_NAME = "__Secure-sessionid"
-CSRF_COOKIE_SECURE = False #Trena biti  true
 CSRF_COOKIE_NAME = "__Secure-csrftoken"
 SECURE_HSTS_SECONDS = 60
 SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool("DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS", default=True)
 SECURE_HSTS_PRELOAD = env.bool("DJANGO_SECURE_HSTS_PRELOAD", default=True)
 SECURE_CONTENT_TYPE_NOSNIFF = env.bool("DJANGO_SECURE_CONTENT_TYPE_NOSNIFF", default=True)
+
+# SECURITY SETTINGS - Temporary for HTTP
+SESSION_COOKIE_SECURE = False  # Set False to allow cookies over HTTP
+CSRF_COOKIE_SECURE = False  # Set False to allow CSRF token over HTTP
+
+# Make sure the CSRF Trusted Origins allows your IP
 CSRF_TRUSTED_ORIGINS = ['http://95.111.252.129']
 
-# This is only for testing! Remove it once HTTPS is enabled
-MIDDLEWARE.remove('django.middleware.csrf.CsrfViewMiddleware')
+# Restore CSRF Middleware (IMPORTANT!)
+if 'django.middleware.csrf.CsrfViewMiddleware' not in MIDDLEWARE:
+    MIDDLEWARE.insert(4, 'django.middleware.csrf.CsrfViewMiddleware')
+
 
 
 # STATIC & MEDIA
