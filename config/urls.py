@@ -10,7 +10,7 @@ from django.views.generic import TemplateView
 from jelena import views, models
 
 urlpatterns = [
-
+    path("admin/", admin.site.urls),
     #Galerije
     path('zenska-galerija/', views.galerija, {'model': models.Zenske_frizure, 'template_name': 'html/zenska_galerija.html'},
          name='zenska_galerija'),

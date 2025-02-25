@@ -51,12 +51,16 @@ SESSION_COOKIE_SECURE = False  # Set False to allow cookies over HTTP
 CSRF_COOKIE_SECURE = False  # Set False to allow CSRF token over HTTP
 
 # Make sure the CSRF Trusted Origins allows your IP
-CSRF_TRUSTED_ORIGINS = ['http://95.111.252.129']
+CSRF_TRUSTED_ORIGINS = ["*"]
+
 
 # Restore CSRF Middleware (IMPORTANT!)
 if 'django.middleware.csrf.CsrfViewMiddleware' not in MIDDLEWARE:
     MIDDLEWARE.insert(4, 'django.middleware.csrf.CsrfViewMiddleware')
 
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+]
 
 
 # STATIC & MEDIA
@@ -142,3 +146,12 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+]
