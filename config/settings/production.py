@@ -86,7 +86,7 @@ STORAGES = {
 
 
 MEDIA_URL = "/media/"  # Local media URL
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/app/media")
 # EMAIL
 # ------------------------------------------------------------------------------
 DEFAULT_FROM_EMAIL = env("DJANGO_DEFAULT_FROM_EMAIL", default="Salon_Jelena <noreply@example.com>")
