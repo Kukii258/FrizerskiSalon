@@ -85,8 +85,11 @@ STORAGES = {
 }
 
 
-MEDIA_URL = "/media/"  # Local media URL
-MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/app/media")
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")  # Must match the actual media folder inside the container
+
+if "DYNO" not in os.environ:  # This ensures local storage works in production
+    DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
 # EMAIL
 # ------------------------------------------------------------------------------
 DEFAULT_FROM_EMAIL = env("DJANGO_DEFAULT_FROM_EMAIL", default="Salon_Jelena <noreply@example.com>")
