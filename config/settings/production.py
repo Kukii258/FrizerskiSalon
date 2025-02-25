@@ -10,7 +10,11 @@ from .base import env
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = [
+    "http://95.111.252.129",  # Your server's IP
+    "https://yourdomain.com",  # Your domain (if using a domain)
+]
+
 
 # settings.py or wsgi.py
 PORT = os.getenv("PORT", "5000")
@@ -49,6 +53,9 @@ SECURE_CONTENT_TYPE_NOSNIFF = env.bool("DJANGO_SECURE_CONTENT_TYPE_NOSNIFF", def
 # SECURITY SETTINGS - Temporary for HTTP
 SESSION_COOKIE_SECURE = False  # Set False to allow cookies over HTTP
 CSRF_COOKIE_SECURE = False  # Set False to allow CSRF token over HTTP
+
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = True
 
 # Make sure the CSRF Trusted Origins allows your IP
 CSRF_TRUSTED_ORIGINS = ["*"]
@@ -154,4 +161,5 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
