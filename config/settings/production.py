@@ -75,7 +75,9 @@ AUTHENTICATION_BACKENDS = [
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
-        "OPTIONS": {"location": MEDIA_ROOT},
+        "OPTIONS": {
+            "location": "/app/media/",
+        },
     },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
@@ -83,11 +85,8 @@ STORAGES = {
 }
 
 
-
-MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")  # Must match the actual media folder inside the container
-
-
+MEDIA_URL = "/media/"  # Local media URL
+MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/app/media")
 # EMAIL
 # ------------------------------------------------------------------------------
 DEFAULT_FROM_EMAIL = env("DJANGO_DEFAULT_FROM_EMAIL", default="Salon_Jelena <noreply@example.com>")
