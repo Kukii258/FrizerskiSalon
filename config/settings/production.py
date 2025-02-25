@@ -57,8 +57,6 @@ CSRF_COOKIE_SECURE = False  # Set False to allow CSRF token over HTTP
 SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_HTTPONLY = True
 
-# Make sure the CSRF Trusted Origins allows your IP
-CSRF_TRUSTED_ORIGINS = ["*"]
 
 
 # Restore CSRF Middleware (IMPORTANT!)
