@@ -76,8 +76,7 @@ STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
         "OPTIONS": {
-            "location": "/path/to/media/directory",  # Update this path as needed
-            "file_overwrite": False,
+            "location": "/app/media/",
         },
     },
     "staticfiles": {
@@ -85,8 +84,9 @@ STORAGES = {
     },
 }
 
-MEDIA_URL = "/media/"  # Local media URL
 
+MEDIA_URL = "/media/"  # Local media URL
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # EMAIL
 # ------------------------------------------------------------------------------
 DEFAULT_FROM_EMAIL = env("DJANGO_DEFAULT_FROM_EMAIL", default="Salon_Jelena <noreply@example.com>")
