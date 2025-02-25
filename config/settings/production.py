@@ -12,9 +12,9 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 CSRF_TRUSTED_ORIGINS = [
     "http://95.111.252.129",  # Your server's IP
-    "https://yourdomain.com",  # Your domain (if using a domain)
 ]
 
+ALLOWED_HOSTS = ["*"]
 
 # settings.py or wsgi.py
 PORT = os.getenv("PORT", "5000")
