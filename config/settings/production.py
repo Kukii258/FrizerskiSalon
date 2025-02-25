@@ -75,14 +75,13 @@ AUTHENTICATION_BACKENDS = [
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
-        "OPTIONS": {
-            "location": "/app/media/",
-        },
+        "OPTIONS": {"location": MEDIA_ROOT},
     },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
 
 
 MEDIA_URL = "/media/"
