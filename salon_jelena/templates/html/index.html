@@ -22,7 +22,7 @@
                   <div class="main-border-button">
                     {% if obavijest.url %}
                       <a href="{{ obavijest.url }}">PROČITAJ VIŠE -></a>
-                    {% else %}
+                    {% elif obavijest.tekst %}
                       <a href="{% url 'obavijest' obavijest.pk %}">PROČITAJ VIŠE -></a>
                     {% endif %}
                   </div>

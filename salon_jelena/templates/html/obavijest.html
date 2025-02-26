@@ -11,8 +11,10 @@
           {% if obavijest.slika %}
             <div class="col-lg-6">
               <div class="left-content">
-                <h2>{{ obavijest.naslov }}</h2>
-                <span>{{ obavijest.pod_naslov }}</span>
+                <div class="obavijest_naslovi">
+                <h2 style="font-size: 50px">{{ obavijest.naslov }}</h2>
+                <h5 class="obavijest_podnaslov">{{ obavijest.pod_naslov }}</h5>
+                </div>
                 <p>{{ obavijest.tekst }}</p>
               </div>
             </div>
@@ -28,13 +30,14 @@
             </div>
           {% else %}
             <div class="col-lg-10">
-              <div class="left-content content text-center">
-                <h2>{{ obavijest.naslov }}</h2>
-                <span>{{ obavijest.pod_naslov }}</span>
+              <div class="left-content obavijest_naslovi">
+                <h2 style="font-size: 50px">{{ obavijest.naslov }}</h2>
+                <h5 class="obavijest_podnaslov">{{ obavijest.pod_naslov }}</h5>
+              </div>
+              <div class="left-content content">
                 <p>{{ obavijest.tekst }}</p>
               </div>
             </div>
-          </div>
         {% endif %}
       </div>
     </div>

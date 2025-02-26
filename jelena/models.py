@@ -13,6 +13,9 @@ class Obavijest(models.Model):
     slika = models.ImageField(upload_to='obavijest_slike',null=False, blank=True)
     url = models.CharField(max_length=512, null=True, blank=True)
 
+    def clean(self):
+        if self.tekst and self.url:
+            raise ValidationError("Ne možete upisat i teskt i url, samo jedno.")
 
     def __str__(self):
         return self.naslov
