@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.contrib.admin import helpers
 
 from .models import Obavijest, Zenske_frizure, Muske_frizure, Djecje_frizure, Produkti
-from .forms import FileFieldForm  # Ensure correct form is imported
+from .forms import FileFieldForm
 
 
 @admin.action(description="Dodaj Mapu Slika")
